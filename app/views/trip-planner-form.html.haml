@@ -1,0 +1,122 @@
+%h2.hide Trip Planner form
+%form#tp-form{novalidate: '', ng: {'submit' => 'submitForm(true)'}}
+  .row
+    %span{'us-spinner' => '', 'spinner-key' => "spinner-1"}
+  %ul.locationList{'ui-sortable' => 'sortableOptions', ng: {model: 'waypoints'}}
+    %li.waypoint{ng: {repeat: 'waypoint in waypoints track by waypoint.id'}, id:'waypoint-pane-{{waypoint.id}}'}
+      .row.form__otp--regular{ng: {if: '$first'}}
+        .col-xs-1{style: "padding-right: 5px !important"}
+          %i.fa.fa-map-marker.fa-3x.waypointIcon.waypointIcon--start{:title=>"Click and drag origin to re-order."}
+        .col-xs-11
+          .input-group{style:'width:100%'}
+            %autocomplete{iter: '{{waypoint.id}}',placeholder: 'Origin', class: 'autocompleteWrapper', id:'fromInput', tabindex: 'null', 'inputclass' => 'clearable tripplanner__location form__input', 'disable-filter' => 'true', 'data' => 'locations', 'on-type'=> 'getLocations', 'on-select' => 'selectResult', 'autocomplete-required' => 'null', ng: {model: 'waypoint.location', 'attr-mobile' => '{{mobile}}', 'attr-autofocus' => '{{$first}}', "model-options" => "{debounce: 300 }"}}
+      .row.trip-error{ng: {if: '$first'}}
+        .col-xs-12.text-right
+          %span#fromError.trip-error{style: 'display:none;'}
+            You must select a starting location from search results.
+      .row.form__otp--regular{ng: {if: '$middle'}}
+        .col-xs-1{style: "padding-right: 5px !important"}
+          %i.fa.fa-map-marker.fa-3x.waypointIcon{ name:'wp-marker-{{$index}}', :title=>"Click and drag waypoint to re-order."}
+        .col-xs-11
+          .input-group{style:'width:100%'}
+            %autocomplete{iter: '{{waypoint.id}}', placeholder: 'Waypoint {{$index}}', class: 'autocompleteWrapper intermediateWaypoint', id:'waypointInput-{{waypoint.id}}', tabindex: 'null', 'inputclass' => 'clearable tripplanner__location form__input', 'disable-filter' => 'true', 'data' => 'locations', 'on-type'=> 'getLocations', 'on-select' => 'selectResult', 'autocomplete-required' => 'null', ng: {model: 'waypoint.location', 'attr-mobile' => '{{mobile}}', "model-options" => "{debounce: 300 }" }}
+      .row.form__otp--regular{ng: {if: '$middle'}}
+        .col-xs-1{style: "padding-right: 5px !important"}
+        .col-xs-9.form__otp--compact
+          %label{:for => "wp-layover"} Layover at least:
+          %input{:type=>"number", :name=>"layoverTime", :value=>"30", :min=>"1", :max=>"60", ng: {model: 'waypoint.layoverTime'}, id:'wp-layover-{{waypoint.id}}'}
+          %span
+            (min)
+        .col-xs-2
+          %i.fa.fa-ban.fa-2x.removeWaypoint{:title=>"Click to remove waypoint.", ng: {click: 'removeWaypoint($index)'}}
+      .row.trip-error{ng: {if: '$middle'}}
+        .col-xs-12.text-right{style: 'margin-top: 0px;'}
+          %span.trip-error{style: 'display:none;', id: 'intermediateError-{{waypoint.id}}'}
+            You must select an intermediate location from search results.
+          %span.trip-error{style: 'display:none;', id: 'intermediateLayoverError-{{waypoint.id}}'}
+            You must enter a layover between 1 and 60 minutes.
+      .row.form__otp--regular{ng: {if: '$last'}}
+        .col-xs-1{style: "padding-right: 5px !important"}
+          %i.fa.fa-map-marker.fa-3x.waypointIcon.waypointIcon--end{:title=>"Click and drag destination to re-order."}
+        .col-xs-11
+          .input-group{style:'width:100%'}
+            %autocomplete{iter: '{{waypoint.id}}',placeholder: 'Destination', class: 'autocompleteWrapper', id:'toInput', tabindex: 'null', 'inputclass' => 'clearable tripplanner__location form__input', 'disable-filter' => 'true', 'data' => 'locations', 'on-type'=> 'getLocations', 'on-select' => 'selectResult', 'autocomplete-required' => 'null', ng: {model: 'waypoint.location', 'attr-mobile' => '{{mobile}}', "model-options" => "{debounce: 300 }"}}
+      .row.trip-error{ng: {if: '$last'}}
+        .col-xs-12.text-right
+          %span#toError.trip-error{style: 'display:none;'}
+            You must select a destination from search results.
+
+  .row
+    .col-xs-12
+      %button#tp-add.addWaypoint.otp--button{type: 'button', ng: {'click' => 'addWaypointAtEnd()'}}
+        %i.fa.fa-plus-circle
+        %span Add Waypoint
+  .row.form__otp--regular{style: "margin-top: 10px"}
+    .col-xs-12
+      .radio.col-xs-4{style: "margin: 0px"}
+        %label
+          %input{:type => "radio", :value => "asap", ng: {model: '$parent.fromTimeType', change: 'specifyFromTimeType(fromTimeType)'} }
+          Depart now
+      .radio.col-xs-4{style: "margin: 0px"}
+        %label
+          %input{:type => "radio", :value => "depart", ng: {model: '$parent.fromTimeType', change: 'specifyFromTimeType(fromTimeType)'} }
+          Depart after:
+      .radio.col-xs-4{style: "margin: 0px"}
+        %label
+          %input{:type => "radio", :value => "arrive", ng: {model: '$parent.fromTimeType', change: 'specifyFromTimeType(fromTimeType)'} }/
+          Arrive by:
+  .row.form__otp--regular{style: "margin-top: 10px"}
+    .col-xs-4{ng: {show: 'fromTimeType != "asap"'} }
+    .col-xs-4{style: "padding-right: 5px !important", ng: {show: 'fromTimeType != "asap"'} }
+      %label.hide{:for => "tp-when"} Trip time
+      %timepicker#fromTimeNonHTML5.timepicker.select.tripplanner__when{'minute-step' => '5', ng: {model: '$parent.fromTime', show: '!html5', change: 'changeFromTime(fromTime)'}}
+      %input#fromTimeHTML5.tripplanner__when{style: "width: 100% !important", type: 'time', step: '300', ng: {model: '$parent.fromTime', required: 'true', show: 'html5', change: 'changeFromTime(fromTime)'}}
+    .col-xs-4{style: "padding-left: 5px !important", ng: {show: 'fromTimeType != "asap"'} }
+      %label.hide{:for => "tp-date"} Date
+      %input#tp-date-simple.select.tripplanner__when{jqdatepicker: '', style: "width: 100% !important", type: "text", ng: {model: 'fromDate', required: 'true', change: 'changeFromDate(fromDate)'}}
+  .row.trip-error-small
+    .col-xs-4
+    .col-xs-8
+      .trip-error-message
+        %div#timeError.trip-error{style: 'display:none;margin-top: 10px;margin-bottom:5px;'}
+          You must enter a valid time.  If searching for trips today, the time must be in the future.
+  .row.trip-error-small
+    .col-xs-12.text-right
+      .trip-error-message
+        %div#dateError.trip-error{style: 'display:none;margin-top: 10px;margin-bottom:5px;'}
+          You must enter a valid date.
+  .row.form__otp--regular
+    .col-xs-2{style: "padding-right: 5px !important"}
+      %label{:for => "tp-prefer"} Priority:
+    .col-xs-10{style: "padding-left: 5px !important"}
+      %select#tp-prefer.select.tripplanner__when{style: "width: 100% !important", ng: {model: '$parent.priority'} }
+        %option{:selected => "selected", :value => "TIME"} Quickest trip
+        %option{:value => "TRANSFERS"} Fewest transfers
+        %option{:value => "WALKING"} Least walking distance
+  .row.form__otp--regular{style: "margin-top: 10px"}
+    .col-xs-4{style: "padding-right: 5px !important"}
+      %label{:for => "tp-include-routes"} Include routes:
+    .col-xs-8{style: "padding-left: 5px !important"}
+      %input#tp-include-routes{:type=>"text", :name=>"includeRoutesPref", :value=>"", style: "width: 100% !important", :pattern => "[a-z,A-Z,0-9,and ]+", :placeholder => "Enter route ids separated by spaces", ng: {model: '$parent.includeRoutes'} }
+  .row.form__otp--regular
+    .col-xs-4{style: "padding-right: 5px !important"}
+      %label{:for => "tp-exclude-routes"} Exclude routes:
+    .col-xs-8{style: "padding-left: 5px !important"}
+      %input#tp-exclude-routes{:type=>"text", :name=>"excludeRoutesPref", :value=>"", style: "width: 100% !important", :pattern => "[a-z,A-Z,0-9,and ]+", :placeholder => "Enter route ids separated by spaces",  ng: {model: '$parent.excludeRoutes'} }
+  .row
+    .col-xs-12
+      %button.btn.btn--primary.btn--outline.btn--full.btn--prefs{type: 'button', "data-toggle" => "collapse", "data-target" => "#collapsePlanningPrefs", "aria-expanded" => "false", "aria-controls" =>"collapsePlanningPrefs"}
+        Additional Trip Planning Preferences
+  #collapsePlanningPrefs.collapse.planning-prefs{ng: {include: "'views/trip-planner-prefs.html'"}}
+  .row.tripplanner-leave-links.tripplanner__actions
+    .col-xs-12
+      %button#tp-submit.btn.btn-primary.btn--full{:type => "submit", ng: {disabled: "submitDisabled"}}
+        Plan
+  .row.tripplanner-clear-links
+    .col-xs-12
+      %button#tp-reset.btn{type: 'button', ng: {'click' => 'startNewCall()'}}
+        %i.fa.fa-phone
+        %span New Call
+      %button#tp-clear.btn{type: 'button', ng: {'click' => 'resetForm()'}}
+        %i.fa.fa-refresh
+        %span Clear

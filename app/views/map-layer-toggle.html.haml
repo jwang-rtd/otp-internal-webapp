@@ -1,0 +1,19 @@
+#mapLayerCheckboxes
+  %form
+    .row
+      .col-xs-1
+        %input#parknride{:type => "checkbox", ng: {'click' => 'toggleMapLayer($event)'}}
+      .col-xs-3
+        Park-n-Ride
+      .col-xs-1
+        %input#stations{:type => "checkbox", ng: {'click' => 'toggleMapLayer($event)'}}
+      .col-xs-3
+        Stations
+      .col-xs-1
+        %input#stops{:type => "checkbox", ng: {'click' => 'toggleMapLayer($event)'}}
+      .col-xs-3
+        Stops
+-#      .col-xs-1
+-#        %input#routes{:type => "checkbox", ng: {'click' => 'toggleMapLayer($event)'}}
+-#      .col-xs-3
+-#        Routes

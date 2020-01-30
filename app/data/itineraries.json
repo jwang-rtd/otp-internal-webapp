@@ -1,0 +1,1881 @@
+{
+  "trip_id": 41,
+  "origin_in_callnride": false,
+  "destination_in_callnride": false,
+  "trip_token": null,
+  "modes": [
+    "mode_transit",
+    "mode_walk"
+  ],
+  "itineraries": [
+    {
+      "id": 100,
+      "trip_part_id": 41,
+      "mode_id": 1,
+      "service_id": null,
+      "server_status": 200,
+      "server_message": null,
+      "duration": 859,
+      "walk_time": 317,
+      "transit_time": 540,
+      "wait_time": 2,
+      "walk_distance": 400.615662132793,
+      "transfers": 0,
+      "count": null,
+      "cost": null,
+      "hidden": false,
+      "created_at": "2016-09-27T15:42:37.802-06:00",
+      "updated_at": "2016-09-27T15:42:37.802-06:00",
+      "ride_count": null,
+      "external_info": null,
+      "match_score": -0.3,
+      "missing_information": false,
+      "accommodation_mismatch": false,
+      "missing_information_text": null,
+      "date_mismatch": false,
+      "time_mismatch": false,
+      "too_late": false,
+      "missing_accommodations": "",
+      "cost_comments": null,
+      "selected": null,
+      "start_time": "2016-09-27T15:47:22.000-06:00",
+      "end_time": "2016-09-27T16:01:41.000-06:00",
+      "is_bookable": false,
+      "booking_confirmation": null,
+      "duration_estimated": false,
+      "map_image": {
+        "url": null
+      },
+      "too_early": false,
+      "returned_mode_code": "mode_transit",
+      "order_xml": null,
+      "assistant": null,
+      "companions": null,
+      "children": null,
+      "other_passengers": null,
+      "discounts": null,
+      "negotiated_pu_time": null,
+      "negotiated_do_time": null,
+      "negotiated_pu_window_start": null,
+      "negotiated_pu_window_end": null,
+      "mode": {
+        "name": "Transit",
+        "code": "mode_transit"
+      },
+      "segment_index": 0,
+      "start_location": {
+        "address_components": [
+          {
+            "long_name": "1240",
+            "short_name": "1240",
+            "types": [
+              "street_number"
+            ]
+          },
+          {
+            "long_name": "East Colfax Avenue",
+            "short_name": "E Colfax Ave",
+            "types": [
+              "route"
+            ]
+          },
+          {
+            "long_name": "Central",
+            "short_name": "Central",
+            "types": [
+              "neighborhood",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver",
+            "short_name": "Denver",
+            "types": [
+              "locality",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver County",
+            "short_name": "Denver County",
+            "types": [
+              "administrative_area_level_2",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Colorado",
+            "short_name": "CO",
+            "types": [
+              "administrative_area_level_1",
+              "political"
+            ]
+          },
+          {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [
+              "country",
+              "political"
+            ]
+          },
+          {
+            "long_name": "80218",
+            "short_name": "80218",
+            "types": [
+              "postal_code"
+            ]
+          },
+          {
+            "long_name": "2253",
+            "short_name": "2253",
+            "types": [
+              "postal_code_suffix"
+            ]
+          },
+          {
+            "long_name": "1240 East Colfax Avenue",
+            "short_name": "1240 East Colfax Avenue",
+            "types": [
+              "street_address"
+            ]
+          }
+        ],
+        "adr_address": "\u003cspan class=\"street-address\"\u003e1240 E Colfax Ave\u003c/span\u003e, \u003cspan class=\"locality\"\u003eDenver\u003c/span\u003e, \u003cspan class=\"region\"\u003eCO\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e80218-2253\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+        "formatted_address": "1240 E Colfax Ave, Denver, CO 80218, USA",
+        "geometry": {
+          "location": {
+            "lat": 39.7398417,
+            "lng": -104.97099579999997
+          },
+          "viewport": {
+            "south": 39.7397502,
+            "west": -104.97099875000004,
+            "north": 39.7401162,
+            "east": -104.97098695
+          }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+        "id": "aa6ee6f6c8dcf4b2be1fb1a45da3acf1b21630ca",
+        "name": "1240 E Colfax Ave",
+        "place_id": "ChIJe_FsKM1-bIcR8MkaE85zzj8",
+        "reference": "CpQBhgAAAH7qQYAHKNv_tEPonRGg4wshIqzeZ3AjOyQPBwc2uKUGBNOn9m8KRIdN5RPtBdInFBKivaLcD8QxxYfb5unEeHdDYlV6juRDNFDeMKd5JAqQI0mQyyyPFSTOG92piAAHfGlpHWvSf8Bmlna607fair6rQfhAF2V0RWCP8SGEJKPpMaLg02jJ6yTWFXzt9ic6YBIQO5PkdxZBqRB14FgwUVsdVRoUJq0ELMBfnAkT-3BjI7IBoMFwN3Y",
+        "scope": "GOOGLE",
+        "types": [
+          "street_address"
+        ],
+        "url": "https://maps.google.com/?q=1240+E+Colfax+Ave,+Denver,+CO+80218,+USA\u0026ftid=0x876c7ecd286cf17b:0x3fce73ce131ac9f0",
+        "utc_offset": -360,
+        "vicinity": "Denver",
+        "html_attributions": null,
+        "place_predictions_id": "ChIJe_FsKM1-bIcR8MkaE85zzj8",
+        "street_number": "1240",
+        "route": "East Colfax Avenue",
+        "neighborhood": "Central",
+        "political": "United States",
+        "locality": "Denver",
+        "administrative_area_level_2": "Denver County",
+        "administrative_area_level_1": "Colorado",
+        "country": "United States",
+        "postal_code": "80218",
+        "postal_code_suffix": "2253"
+      },
+      "end_location": {
+        "address_components": [
+          {
+            "long_name": "4301",
+            "short_name": "4301",
+            "types": [
+              "street_number"
+            ]
+          },
+          {
+            "long_name": "East Colfax Avenue",
+            "short_name": "E Colfax Ave",
+            "types": [
+              "route"
+            ]
+          },
+          {
+            "long_name": "North",
+            "short_name": "North",
+            "types": [
+              "neighborhood",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver",
+            "short_name": "Denver",
+            "types": [
+              "locality",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver County",
+            "short_name": "Denver County",
+            "types": [
+              "administrative_area_level_2",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Colorado",
+            "short_name": "CO",
+            "types": [
+              "administrative_area_level_1",
+              "political"
+            ]
+          },
+          {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [
+              "country",
+              "political"
+            ]
+          },
+          {
+            "long_name": "80220",
+            "short_name": "80220",
+            "types": [
+              "postal_code"
+            ]
+          },
+          {
+            "long_name": "1115",
+            "short_name": "1115",
+            "types": [
+              "postal_code_suffix"
+            ]
+          },
+          {
+            "long_name": "4301 East Colfax Avenue",
+            "short_name": "4301 East Colfax Avenue",
+            "types": [
+              "street_address"
+            ]
+          }
+        ],
+        "adr_address": "\u003cspan class=\"street-address\"\u003e4301 E Colfax Ave\u003c/span\u003e, \u003cspan class=\"locality\"\u003eDenver\u003c/span\u003e, \u003cspan class=\"region\"\u003eCO\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e80220-1115\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+        "formatted_address": "4301 E Colfax Ave, Denver, CO 80220, USA",
+        "geometry": {
+          "location": {
+            "lat": 39.74070400000001,
+            "lng": -104.9367623
+          },
+          "viewport": {
+            "south": 39.7399459,
+            "west": -104.93676349999998,
+            "north": 39.74095670000001,
+            "east": -104.93676189999996
+          }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+        "id": "72556af78b7b38e9e8867c1e662750d327046a36",
+        "name": "4301 E Colfax Ave",
+        "place_id": "ChIJvyzZmQF8bIcR8Fdz0F73tmQ",
+        "reference": "CpQBhgAAAPG4OBCzFBSKjRo_yHHd5PbdDge8AuYqCbfIPnrhFHYbxNYcpK9Vmlo5-71SQuAlnQV-gMVMJ1CJFPJty9HMovKqUPlZjVB7VwAh3g4nzCvnD4pAx7IQQ6RTPHS8OAOzNhLw2MPogwDY7o6RQDnq1QL5NQVtTRk4-pkGKwVpeBqh4VCrNT6pcoRmqhRpAhM18BIQRzmDiEoN41k5A8wTUsdpMRoUZ457MnP9f337R_3_aeMmqzG04fs",
+        "scope": "GOOGLE",
+        "types": [
+          "street_address"
+        ],
+        "url": "https://maps.google.com/?q=4301+E+Colfax+Ave,+Denver,+CO+80220,+USA\u0026ftid=0x876c7c0199d92cbf:0x64b6f75ed07357f0",
+        "utc_offset": -360,
+        "vicinity": "Denver",
+        "html_attributions": null,
+        "place_predictions_id": "ChIJvyzZmQF8bIcR8Fdz0F73tmQ",
+        "street_number": "4301",
+        "route": "East Colfax Avenue",
+        "neighborhood": "North",
+        "political": "United States",
+        "locality": "Denver",
+        "administrative_area_level_2": "Denver County",
+        "administrative_area_level_1": "Colorado",
+        "country": "United States",
+        "postal_code": "80220",
+        "postal_code_suffix": "1115"
+      },
+      "prebooking_questions": [
+        {
+          "question": "Will you be traveling with an approved escort?",
+          "choices": [
+            true,
+            false
+          ],
+          "code": "assistant"
+        },
+        {
+          "question": "How many children or family members will be traveling with you?",
+          "choices": [
+            0,
+            1,
+            2
+          ],
+          "code": "children"
+        }
+      ],
+      "bookable": false,
+      "service_name": "",
+      "json_legs": [
+        {
+          "startTime": 1475012842000,
+          "endTime": 1475013025000,
+          "departureDelay": 0,
+          "arrivalDelay": 0,
+          "realTime": false,
+          "distance": 241.027,
+          "pathway": false,
+          "mode": "WALK",
+          "route": "",
+          "agencyTimeZoneOffset": -21600000,
+          "interlineWithPreviousLeg": false,
+          "from": {
+            "name": "Origin",
+            "lon": -104.9709958,
+            "lat": 39.7398417,
+            "departure": 1475012842000,
+            "orig": "",
+            "vertexType": "NORMAL"
+          },
+          "to": {
+            "name": "Colfax Ave \u0026 Franklin St",
+            "stopId": "1:12883",
+            "stopCode": "12883",
+            "lon": -104.968175,
+            "lat": 39.739917,
+            "arrival": 1475013025000,
+            "departure": 1475013026000,
+            "nextDeparture": 1475013376,
+            "stopIndex": 14,
+            "stopSequence": 15,
+            "vertexType": "TRANSIT"
+          },
+          "legGeometry": {
+            "points": "avpqFvcu_S?O?U?Q?sA?_@?gB?gB@qA?m@?U?a@",
+            "length": 12
+          },
+          "rentedBike": false,
+          "transitLeg": false,
+          "duration": 183.0,
+          "intermediateStops": [
+
+          ],
+          "steps": [
+            {
+              "distance": 241.027,
+              "relativeDirection": "DEPART",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "EAST",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.970993519632,
+              "lat": 39.74001182628296,
+              "elevation": [
+
+              ]
+            }
+          ],
+          "specialService": false
+        },
+        {
+          "startTime": 1475013026000,
+          "endTime": 1475013566000,
+          "departureDelay": 70,
+          "arrivalDelay": 29,
+          "realTime": true,
+          "distance": 2668.931834750193,
+          "pathway": false,
+          "mode": "BUS",
+          "route": "15",
+          "agencyName": "Regional Transportation District",
+          "agencyUrl": "http://rtd-denver.com",
+          "agencyTimeZoneOffset": -21600000,
+          "routeColor": "0076CE",
+          "routeType": 3,
+          "routeId": "1:15",
+          "routeTextColor": "FFFFFF",
+          "interlineWithPreviousLeg": false,
+          "tripBlockId": "b_15 32",
+          "headsign": "Billings via E Colfax Ave",
+          "agencyId": "RTD",
+          "tripId": "1:110144085",
+          "serviceDate": "20160927",
+          "from": {
+            "name": "Colfax Ave \u0026 Franklin St",
+            "stopId": "1:12883",
+            "stopCode": "12883",
+            "lon": -104.968175,
+            "lat": 39.739917,
+            "arrival": 1475013025000,
+            "departure": 1475013026000,
+            "nextDeparture": 1475013376,
+            "stopIndex": 14,
+            "stopSequence": 15,
+            "vertexType": "TRANSIT"
+          },
+          "to": {
+            "name": "Colfax Ave \u0026 Bellaire St",
+            "stopId": "1:12845",
+            "stopCode": "12845",
+            "lon": -104.936968,
+            "lat": 39.740014,
+            "arrival": 1475013566000,
+            "departure": 1475013567000,
+            "stopIndex": 23,
+            "stopSequence": 24,
+            "vertexType": "TRANSIT"
+          },
+          "legGeometry": {
+            "points": "avpqFbrt_S@c@?yC?{C?s@?g@?a@?]?y@?y@?c@?]?q@???q@?q@?I?]???e@@_@Am@?k@?yC?cA?{@@sB?uF?k@AMCWG]AKAGCYCO?OAKAUAUAEAO??AUA[?M?OA@?K?O?Q@m@?i@?g@?]?e@?_@?k@?a@?s@?E?c@?oC?cA?uB?Q@Q?O?O?Y?W?wB?y@Aw@@qB@uB@sB@wB@qBAaC@m@?i@?e@?_@?kA?g@@g@CsC?iA@u@AkB?}@?kA@o@Ak@?]?O@{@?CAa@B}A?[?wBJ[?w@?mA?w@?g@?A?o@?[?wB?eB?kB?{@?s@?qC?mA?u@?G",
+            "length": 120
+          },
+          "routeShortName": "15",
+          "routeLongName": "East Colfax Avenue",
+          "rentedBike": false,
+          "transitLeg": true,
+          "duration": 540.0,
+          "intermediateStops": [
+            {
+              "name": "Colfax Ave \u0026 High St",
+              "stopId": "1:12897",
+              "stopCode": "12897",
+              "lon": -104.964501,
+              "lat": 39.739936,
+              "arrival": 1475013091000,
+              "departure": 1475013091000,
+              "stopIndex": 15,
+              "stopSequence": 16,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Vine St",
+              "stopId": "1:13003",
+              "stopCode": "13003",
+              "lon": -104.961893,
+              "lat": 39.7399,
+              "arrival": 1475013159000,
+              "departure": 1475013159000,
+              "stopIndex": 16,
+              "stopSequence": 17,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Josephine St",
+              "stopId": "1:13019",
+              "stopCode": "13019",
+              "lon": -104.959123,
+              "lat": 39.739968,
+              "arrival": 1475013211000,
+              "departure": 1475013211000,
+              "stopIndex": 17,
+              "stopSequence": 18,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Elizabeth St",
+              "stopId": "1:12874",
+              "stopCode": "12874",
+              "lon": -104.956005,
+              "lat": 39.7401,
+              "arrival": 1475013265000,
+              "departure": 1475013265000,
+              "stopIndex": 18,
+              "stopSequence": 19,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Fillmore St",
+              "stopId": "1:12878",
+              "stopCode": "12878",
+              "lon": -104.952698,
+              "lat": 39.740091,
+              "arrival": 1475013351000,
+              "departure": 1475013351000,
+              "stopIndex": 19,
+              "stopSequence": 20,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Adams St",
+              "stopId": "1:12840",
+              "stopCode": "12840",
+              "lon": -104.947489,
+              "lat": 39.740073,
+              "arrival": 1475013414000,
+              "departure": 1475013414000,
+              "stopIndex": 20,
+              "stopSequence": 21,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Garfield St",
+              "stopId": "1:12885",
+              "stopCode": "12885",
+              "lon": -104.943664,
+              "lat": 39.740059,
+              "arrival": 1475013459000,
+              "departure": 1475013459000,
+              "stopIndex": 21,
+              "stopSequence": 22,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Colorado Blvd",
+              "stopId": "1:12864",
+              "stopCode": "12864",
+              "lon": -104.940985,
+              "lat": 39.740023,
+              "arrival": 1475013516000,
+              "departure": 1475013516000,
+              "stopIndex": 22,
+              "stopSequence": 23,
+              "vertexType": "TRANSIT"
+            }
+          ],
+          "steps": [
+
+          ],
+          "serviceName": "Regional Transportation District",
+          "specialService": false
+        },
+        {
+          "startTime": 1475013567000,
+          "endTime": 1475013701000,
+          "departureDelay": 0,
+          "arrivalDelay": 0,
+          "realTime": false,
+          "distance": 159.488,
+          "pathway": false,
+          "mode": "WALK",
+          "route": "",
+          "agencyTimeZoneOffset": -21600000,
+          "interlineWithPreviousLeg": false,
+          "from": {
+            "name": "Colfax Ave \u0026 Bellaire St",
+            "stopId": "1:12845",
+            "stopCode": "12845",
+            "lon": -104.936968,
+            "lat": 39.740014,
+            "arrival": 1475013566000,
+            "departure": 1475013567000,
+            "stopIndex": 23,
+            "stopSequence": 24,
+            "vertexType": "TRANSIT"
+          },
+          "to": {
+            "name": "Destination",
+            "lon": -104.9367623,
+            "lat": 39.740704,
+            "arrival": 1475013701000,
+            "orig": "",
+            "vertexType": "NORMAL"
+          },
+          "legGeometry": {
+            "points": "mvpqF`on_S@z@WC?sCgB?",
+            "length": 5
+          },
+          "rentedBike": false,
+          "transitLeg": false,
+          "duration": 134.0,
+          "intermediateStops": [
+
+          ],
+          "steps": [
+            {
+              "distance": 25.614,
+              "relativeDirection": "DEPART",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "WEST",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.9369684314743,
+              "lat": 39.740071137608304,
+              "elevation": [
+
+              ]
+            },
+            {
+              "distance": 76.202,
+              "relativeDirection": "UTURN_RIGHT",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "EAST",
+              "stayOn": true,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.93724560000001,
+              "lat": 39.7401841,
+              "elevation": [
+
+              ]
+            },
+            {
+              "distance": 57.672,
+              "relativeDirection": "LEFT",
+              "streetName": "parking aisle",
+              "absoluteDirection": "NORTH",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.9365047,
+              "lat": 39.740185000000004,
+              "elevation": [
+
+              ]
+            }
+          ],
+          "specialService": false
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "trip_part_id": 41,
+      "mode_id": 1,
+      "service_id": null,
+      "server_status": 200,
+      "server_message": null,
+      "duration": 861,
+      "walk_time": 317,
+      "transit_time": 542,
+      "wait_time": 2,
+      "walk_distance": 400.615662132793,
+      "transfers": 0,
+      "count": null,
+      "cost": null,
+      "hidden": false,
+      "created_at": "2016-09-27T15:42:37.808-06:00",
+      "updated_at": "2016-09-27T15:42:37.808-06:00",
+      "ride_count": null,
+      "external_info": null,
+      "match_score": -0.2,
+      "missing_information": false,
+      "accommodation_mismatch": false,
+      "missing_information_text": null,
+      "date_mismatch": false,
+      "time_mismatch": false,
+      "too_late": false,
+      "missing_accommodations": "",
+      "cost_comments": null,
+      "selected": null,
+      "start_time": "2016-09-27T16:00:50.000-06:00",
+      "end_time": "2016-09-27T16:15:11.000-06:00",
+      "is_bookable": false,
+      "booking_confirmation": null,
+      "duration_estimated": false,
+      "map_image": {
+        "url": null
+      },
+      "too_early": false,
+      "returned_mode_code": "mode_transit",
+      "order_xml": null,
+      "assistant": null,
+      "companions": null,
+      "children": null,
+      "other_passengers": null,
+      "discounts": null,
+      "negotiated_pu_time": null,
+      "negotiated_do_time": null,
+      "negotiated_pu_window_start": null,
+      "negotiated_pu_window_end": null,
+      "mode": {
+        "name": "Transit",
+        "code": "mode_transit"
+      },
+      "segment_index": 0,
+      "start_location": {
+        "address_components": [
+          {
+            "long_name": "1240",
+            "short_name": "1240",
+            "types": [
+              "street_number"
+            ]
+          },
+          {
+            "long_name": "East Colfax Avenue",
+            "short_name": "E Colfax Ave",
+            "types": [
+              "route"
+            ]
+          },
+          {
+            "long_name": "Central",
+            "short_name": "Central",
+            "types": [
+              "neighborhood",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver",
+            "short_name": "Denver",
+            "types": [
+              "locality",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver County",
+            "short_name": "Denver County",
+            "types": [
+              "administrative_area_level_2",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Colorado",
+            "short_name": "CO",
+            "types": [
+              "administrative_area_level_1",
+              "political"
+            ]
+          },
+          {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [
+              "country",
+              "political"
+            ]
+          },
+          {
+            "long_name": "80218",
+            "short_name": "80218",
+            "types": [
+              "postal_code"
+            ]
+          },
+          {
+            "long_name": "2253",
+            "short_name": "2253",
+            "types": [
+              "postal_code_suffix"
+            ]
+          },
+          {
+            "long_name": "1240 East Colfax Avenue",
+            "short_name": "1240 East Colfax Avenue",
+            "types": [
+              "street_address"
+            ]
+          }
+        ],
+        "adr_address": "\u003cspan class=\"street-address\"\u003e1240 E Colfax Ave\u003c/span\u003e, \u003cspan class=\"locality\"\u003eDenver\u003c/span\u003e, \u003cspan class=\"region\"\u003eCO\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e80218-2253\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+        "formatted_address": "1240 E Colfax Ave, Denver, CO 80218, USA",
+        "geometry": {
+          "location": {
+            "lat": 39.7398417,
+            "lng": -104.97099579999997
+          },
+          "viewport": {
+            "south": 39.7397502,
+            "west": -104.97099875000004,
+            "north": 39.7401162,
+            "east": -104.97098695
+          }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+        "id": "aa6ee6f6c8dcf4b2be1fb1a45da3acf1b21630ca",
+        "name": "1240 E Colfax Ave",
+        "place_id": "ChIJe_FsKM1-bIcR8MkaE85zzj8",
+        "reference": "CpQBhgAAAH7qQYAHKNv_tEPonRGg4wshIqzeZ3AjOyQPBwc2uKUGBNOn9m8KRIdN5RPtBdInFBKivaLcD8QxxYfb5unEeHdDYlV6juRDNFDeMKd5JAqQI0mQyyyPFSTOG92piAAHfGlpHWvSf8Bmlna607fair6rQfhAF2V0RWCP8SGEJKPpMaLg02jJ6yTWFXzt9ic6YBIQO5PkdxZBqRB14FgwUVsdVRoUJq0ELMBfnAkT-3BjI7IBoMFwN3Y",
+        "scope": "GOOGLE",
+        "types": [
+          "street_address"
+        ],
+        "url": "https://maps.google.com/?q=1240+E+Colfax+Ave,+Denver,+CO+80218,+USA\u0026ftid=0x876c7ecd286cf17b:0x3fce73ce131ac9f0",
+        "utc_offset": -360,
+        "vicinity": "Denver",
+        "html_attributions": null,
+        "place_predictions_id": "ChIJe_FsKM1-bIcR8MkaE85zzj8",
+        "street_number": "1240",
+        "route": "East Colfax Avenue",
+        "neighborhood": "Central",
+        "political": "United States",
+        "locality": "Denver",
+        "administrative_area_level_2": "Denver County",
+        "administrative_area_level_1": "Colorado",
+        "country": "United States",
+        "postal_code": "80218",
+        "postal_code_suffix": "2253"
+      },
+      "end_location": {
+        "address_components": [
+          {
+            "long_name": "4301",
+            "short_name": "4301",
+            "types": [
+              "street_number"
+            ]
+          },
+          {
+            "long_name": "East Colfax Avenue",
+            "short_name": "E Colfax Ave",
+            "types": [
+              "route"
+            ]
+          },
+          {
+            "long_name": "North",
+            "short_name": "North",
+            "types": [
+              "neighborhood",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver",
+            "short_name": "Denver",
+            "types": [
+              "locality",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver County",
+            "short_name": "Denver County",
+            "types": [
+              "administrative_area_level_2",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Colorado",
+            "short_name": "CO",
+            "types": [
+              "administrative_area_level_1",
+              "political"
+            ]
+          },
+          {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [
+              "country",
+              "political"
+            ]
+          },
+          {
+            "long_name": "80220",
+            "short_name": "80220",
+            "types": [
+              "postal_code"
+            ]
+          },
+          {
+            "long_name": "1115",
+            "short_name": "1115",
+            "types": [
+              "postal_code_suffix"
+            ]
+          },
+          {
+            "long_name": "4301 East Colfax Avenue",
+            "short_name": "4301 East Colfax Avenue",
+            "types": [
+              "street_address"
+            ]
+          }
+        ],
+        "adr_address": "\u003cspan class=\"street-address\"\u003e4301 E Colfax Ave\u003c/span\u003e, \u003cspan class=\"locality\"\u003eDenver\u003c/span\u003e, \u003cspan class=\"region\"\u003eCO\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e80220-1115\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+        "formatted_address": "4301 E Colfax Ave, Denver, CO 80220, USA",
+        "geometry": {
+          "location": {
+            "lat": 39.74070400000001,
+            "lng": -104.9367623
+          },
+          "viewport": {
+            "south": 39.7399459,
+            "west": -104.93676349999998,
+            "north": 39.74095670000001,
+            "east": -104.93676189999996
+          }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+        "id": "72556af78b7b38e9e8867c1e662750d327046a36",
+        "name": "4301 E Colfax Ave",
+        "place_id": "ChIJvyzZmQF8bIcR8Fdz0F73tmQ",
+        "reference": "CpQBhgAAAPG4OBCzFBSKjRo_yHHd5PbdDge8AuYqCbfIPnrhFHYbxNYcpK9Vmlo5-71SQuAlnQV-gMVMJ1CJFPJty9HMovKqUPlZjVB7VwAh3g4nzCvnD4pAx7IQQ6RTPHS8OAOzNhLw2MPogwDY7o6RQDnq1QL5NQVtTRk4-pkGKwVpeBqh4VCrNT6pcoRmqhRpAhM18BIQRzmDiEoN41k5A8wTUsdpMRoUZ457MnP9f337R_3_aeMmqzG04fs",
+        "scope": "GOOGLE",
+        "types": [
+          "street_address"
+        ],
+        "url": "https://maps.google.com/?q=4301+E+Colfax+Ave,+Denver,+CO+80220,+USA\u0026ftid=0x876c7c0199d92cbf:0x64b6f75ed07357f0",
+        "utc_offset": -360,
+        "vicinity": "Denver",
+        "html_attributions": null,
+        "place_predictions_id": "ChIJvyzZmQF8bIcR8Fdz0F73tmQ",
+        "street_number": "4301",
+        "route": "East Colfax Avenue",
+        "neighborhood": "North",
+        "political": "United States",
+        "locality": "Denver",
+        "administrative_area_level_2": "Denver County",
+        "administrative_area_level_1": "Colorado",
+        "country": "United States",
+        "postal_code": "80220",
+        "postal_code_suffix": "1115"
+      },
+      "prebooking_questions": [
+        {
+          "question": "Will you be traveling with an approved escort?",
+          "choices": [
+            true,
+            false
+          ],
+          "code": "assistant"
+        },
+        {
+          "question": "How many children or family members will be traveling with you?",
+          "choices": [
+            0,
+            1,
+            2
+          ],
+          "code": "children"
+        }
+      ],
+      "bookable": false,
+      "service_name": "",
+      "json_legs": [
+        {
+          "startTime": 1475013650000,
+          "endTime": 1475013833000,
+          "departureDelay": 0,
+          "arrivalDelay": 0,
+          "realTime": false,
+          "distance": 241.027,
+          "pathway": false,
+          "mode": "WALK",
+          "route": "",
+          "agencyTimeZoneOffset": -21600000,
+          "interlineWithPreviousLeg": false,
+          "from": {
+            "name": "Origin",
+            "lon": -104.9709958,
+            "lat": 39.7398417,
+            "departure": 1475013650000,
+            "orig": "",
+            "vertexType": "NORMAL"
+          },
+          "to": {
+            "name": "Colfax Ave \u0026 Franklin St",
+            "stopId": "1:12883",
+            "stopCode": "12883",
+            "lon": -104.968175,
+            "lat": 39.739917,
+            "arrival": 1475013833000,
+            "departure": 1475013834000,
+            "nextDeparture": 1475013856,
+            "stopIndex": 14,
+            "stopSequence": 15,
+            "vertexType": "TRANSIT"
+          },
+          "legGeometry": {
+            "points": "avpqFvcu_S?O?U?Q?sA?_@?gB?gB@qA?m@?U?a@",
+            "length": 12
+          },
+          "rentedBike": false,
+          "transitLeg": false,
+          "duration": 183.0,
+          "intermediateStops": [
+
+          ],
+          "steps": [
+            {
+              "distance": 241.027,
+              "relativeDirection": "DEPART",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "EAST",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.970993519632,
+              "lat": 39.74001182628296,
+              "elevation": [
+
+              ]
+            }
+          ],
+          "specialService": false
+        },
+        {
+          "startTime": 1475013834000,
+          "endTime": 1475014376000,
+          "departureDelay": 458,
+          "arrivalDelay": 418,
+          "realTime": true,
+          "distance": 2668.931834750193,
+          "pathway": false,
+          "mode": "BUS",
+          "route": "15",
+          "agencyName": "Regional Transportation District",
+          "agencyUrl": "http://rtd-denver.com",
+          "agencyTimeZoneOffset": -21600000,
+          "routeColor": "0076CE",
+          "routeType": 3,
+          "routeId": "1:15",
+          "routeTextColor": "FFFFFF",
+          "interlineWithPreviousLeg": false,
+          "tripBlockId": "b_15  7",
+          "headsign": "Krameria via E Colfax Ave",
+          "agencyId": "RTD",
+          "tripId": "1:110144084",
+          "serviceDate": "20160927",
+          "from": {
+            "name": "Colfax Ave \u0026 Franklin St",
+            "stopId": "1:12883",
+            "stopCode": "12883",
+            "lon": -104.968175,
+            "lat": 39.739917,
+            "arrival": 1475013833000,
+            "departure": 1475013834000,
+            "nextDeparture": 1475013856,
+            "stopIndex": 14,
+            "stopSequence": 15,
+            "vertexType": "TRANSIT"
+          },
+          "to": {
+            "name": "Colfax Ave \u0026 Bellaire St",
+            "stopId": "1:12845",
+            "stopCode": "12845",
+            "lon": -104.936968,
+            "lat": 39.740014,
+            "arrival": 1475014376000,
+            "departure": 1475014377000,
+            "stopIndex": 23,
+            "stopSequence": 24,
+            "vertexType": "TRANSIT"
+          },
+          "legGeometry": {
+            "points": "avpqFbrt_S@c@?yC?{C?s@?g@?a@?]?y@?y@?c@?]?q@???q@?q@?I?]???e@@_@Am@?k@?yC?cA?{@@sB?uF?k@AMCWG]AKAGCYCO?OAKAUAUAEAO??AUA[?M?OA@?K?O?Q@m@?i@?g@?]?e@?_@?k@?a@?s@?E?c@?oC?cA?uB?Q@Q?O?O?Y?W?wB?y@Aw@@qB@uB@sB@wB@qBAaC@m@?i@?e@?_@?kA?g@@g@CsC?iA@u@AkB?}@?kA@o@Ak@?]?O@{@?CAa@B}A?[?wBJ[?w@?mA?w@?g@?A?o@?[?wB?eB?kB?{@?s@?qC?mA?u@?G",
+            "length": 120
+          },
+          "routeShortName": "15",
+          "routeLongName": "East Colfax Avenue",
+          "rentedBike": false,
+          "transitLeg": true,
+          "duration": 542.0,
+          "intermediateStops": [
+            {
+              "name": "Colfax Ave \u0026 High St",
+              "stopId": "1:12897",
+              "stopCode": "12897",
+              "lon": -104.964501,
+              "lat": 39.739936,
+              "arrival": 1475013899000,
+              "departure": 1475013899000,
+              "stopIndex": 15,
+              "stopSequence": 16,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Vine St",
+              "stopId": "1:13003",
+              "stopCode": "13003",
+              "lon": -104.961893,
+              "lat": 39.7399,
+              "arrival": 1475013967000,
+              "departure": 1475013967000,
+              "stopIndex": 16,
+              "stopSequence": 17,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Josephine St",
+              "stopId": "1:13019",
+              "stopCode": "13019",
+              "lon": -104.959123,
+              "lat": 39.739968,
+              "arrival": 1475014019000,
+              "departure": 1475014019000,
+              "stopIndex": 17,
+              "stopSequence": 18,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Elizabeth St",
+              "stopId": "1:12874",
+              "stopCode": "12874",
+              "lon": -104.956005,
+              "lat": 39.7401,
+              "arrival": 1475014073000,
+              "departure": 1475014073000,
+              "stopIndex": 18,
+              "stopSequence": 19,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Fillmore St",
+              "stopId": "1:12878",
+              "stopCode": "12878",
+              "lon": -104.952698,
+              "lat": 39.740091,
+              "arrival": 1475014159000,
+              "departure": 1475014159000,
+              "stopIndex": 19,
+              "stopSequence": 20,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Adams St",
+              "stopId": "1:12840",
+              "stopCode": "12840",
+              "lon": -104.947489,
+              "lat": 39.740073,
+              "arrival": 1475014222000,
+              "departure": 1475014222000,
+              "stopIndex": 20,
+              "stopSequence": 21,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Garfield St",
+              "stopId": "1:12885",
+              "stopCode": "12885",
+              "lon": -104.943664,
+              "lat": 39.740059,
+              "arrival": 1475014267000,
+              "departure": 1475014267000,
+              "stopIndex": 21,
+              "stopSequence": 22,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Colorado Blvd",
+              "stopId": "1:12864",
+              "stopCode": "12864",
+              "lon": -104.940985,
+              "lat": 39.740023,
+              "arrival": 1475014325000,
+              "departure": 1475014325000,
+              "stopIndex": 22,
+              "stopSequence": 23,
+              "vertexType": "TRANSIT"
+            }
+          ],
+          "steps": [
+
+          ],
+          "serviceName": "Regional Transportation District",
+          "specialService": false
+        },
+        {
+          "startTime": 1475014377000,
+          "endTime": 1475014511000,
+          "departureDelay": 0,
+          "arrivalDelay": 0,
+          "realTime": false,
+          "distance": 159.488,
+          "pathway": false,
+          "mode": "WALK",
+          "route": "",
+          "agencyTimeZoneOffset": -21600000,
+          "interlineWithPreviousLeg": false,
+          "from": {
+            "name": "Colfax Ave \u0026 Bellaire St",
+            "stopId": "1:12845",
+            "stopCode": "12845",
+            "lon": -104.936968,
+            "lat": 39.740014,
+            "arrival": 1475014376000,
+            "departure": 1475014377000,
+            "stopIndex": 23,
+            "stopSequence": 24,
+            "vertexType": "TRANSIT"
+          },
+          "to": {
+            "name": "Destination",
+            "lon": -104.9367623,
+            "lat": 39.740704,
+            "arrival": 1475014511000,
+            "orig": "",
+            "vertexType": "NORMAL"
+          },
+          "legGeometry": {
+            "points": "mvpqF`on_S@z@WC?sCgB?",
+            "length": 5
+          },
+          "rentedBike": false,
+          "transitLeg": false,
+          "duration": 134.0,
+          "intermediateStops": [
+
+          ],
+          "steps": [
+            {
+              "distance": 25.614,
+              "relativeDirection": "DEPART",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "WEST",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.9369684314743,
+              "lat": 39.740071137608304,
+              "elevation": [
+
+              ]
+            },
+            {
+              "distance": 76.202,
+              "relativeDirection": "UTURN_RIGHT",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "EAST",
+              "stayOn": true,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.93724560000001,
+              "lat": 39.7401841,
+              "elevation": [
+
+              ]
+            },
+            {
+              "distance": 57.672,
+              "relativeDirection": "LEFT",
+              "streetName": "parking aisle",
+              "absoluteDirection": "NORTH",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.9365047,
+              "lat": 39.740185000000004,
+              "elevation": [
+
+              ]
+            }
+          ],
+          "specialService": false
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "trip_part_id": 41,
+      "mode_id": 1,
+      "service_id": null,
+      "server_status": 200,
+      "server_message": null,
+      "duration": 859,
+      "walk_time": 317,
+      "transit_time": 540,
+      "wait_time": 2,
+      "walk_distance": 400.615662132793,
+      "transfers": 0,
+      "count": null,
+      "cost": null,
+      "hidden": false,
+      "created_at": "2016-09-27T15:42:37.813-06:00",
+      "updated_at": "2016-09-27T15:42:37.813-06:00",
+      "ride_count": null,
+      "external_info": null,
+      "match_score": -0.1,
+      "missing_information": false,
+      "accommodation_mismatch": false,
+      "missing_information_text": null,
+      "date_mismatch": false,
+      "time_mismatch": false,
+      "too_late": false,
+      "missing_accommodations": "",
+      "cost_comments": null,
+      "selected": null,
+      "start_time": "2016-09-27T16:02:43.000-06:00",
+      "end_time": "2016-09-27T16:17:02.000-06:00",
+      "is_bookable": false,
+      "booking_confirmation": null,
+      "duration_estimated": false,
+      "map_image": {
+        "url": null
+      },
+      "too_early": false,
+      "returned_mode_code": "mode_transit",
+      "order_xml": null,
+      "assistant": null,
+      "companions": null,
+      "children": null,
+      "other_passengers": null,
+      "discounts": null,
+      "negotiated_pu_time": null,
+      "negotiated_do_time": null,
+      "negotiated_pu_window_start": null,
+      "negotiated_pu_window_end": null,
+      "mode": {
+        "name": "Transit",
+        "code": "mode_transit"
+      },
+      "segment_index": 0,
+      "start_location": {
+        "address_components": [
+          {
+            "long_name": "1240",
+            "short_name": "1240",
+            "types": [
+              "street_number"
+            ]
+          },
+          {
+            "long_name": "East Colfax Avenue",
+            "short_name": "E Colfax Ave",
+            "types": [
+              "route"
+            ]
+          },
+          {
+            "long_name": "Central",
+            "short_name": "Central",
+            "types": [
+              "neighborhood",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver",
+            "short_name": "Denver",
+            "types": [
+              "locality",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver County",
+            "short_name": "Denver County",
+            "types": [
+              "administrative_area_level_2",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Colorado",
+            "short_name": "CO",
+            "types": [
+              "administrative_area_level_1",
+              "political"
+            ]
+          },
+          {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [
+              "country",
+              "political"
+            ]
+          },
+          {
+            "long_name": "80218",
+            "short_name": "80218",
+            "types": [
+              "postal_code"
+            ]
+          },
+          {
+            "long_name": "2253",
+            "short_name": "2253",
+            "types": [
+              "postal_code_suffix"
+            ]
+          },
+          {
+            "long_name": "1240 East Colfax Avenue",
+            "short_name": "1240 East Colfax Avenue",
+            "types": [
+              "street_address"
+            ]
+          }
+        ],
+        "adr_address": "\u003cspan class=\"street-address\"\u003e1240 E Colfax Ave\u003c/span\u003e, \u003cspan class=\"locality\"\u003eDenver\u003c/span\u003e, \u003cspan class=\"region\"\u003eCO\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e80218-2253\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+        "formatted_address": "1240 E Colfax Ave, Denver, CO 80218, USA",
+        "geometry": {
+          "location": {
+            "lat": 39.7398417,
+            "lng": -104.97099579999997
+          },
+          "viewport": {
+            "south": 39.7397502,
+            "west": -104.97099875000004,
+            "north": 39.7401162,
+            "east": -104.97098695
+          }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+        "id": "aa6ee6f6c8dcf4b2be1fb1a45da3acf1b21630ca",
+        "name": "1240 E Colfax Ave",
+        "place_id": "ChIJe_FsKM1-bIcR8MkaE85zzj8",
+        "reference": "CpQBhgAAAH7qQYAHKNv_tEPonRGg4wshIqzeZ3AjOyQPBwc2uKUGBNOn9m8KRIdN5RPtBdInFBKivaLcD8QxxYfb5unEeHdDYlV6juRDNFDeMKd5JAqQI0mQyyyPFSTOG92piAAHfGlpHWvSf8Bmlna607fair6rQfhAF2V0RWCP8SGEJKPpMaLg02jJ6yTWFXzt9ic6YBIQO5PkdxZBqRB14FgwUVsdVRoUJq0ELMBfnAkT-3BjI7IBoMFwN3Y",
+        "scope": "GOOGLE",
+        "types": [
+          "street_address"
+        ],
+        "url": "https://maps.google.com/?q=1240+E+Colfax+Ave,+Denver,+CO+80218,+USA\u0026ftid=0x876c7ecd286cf17b:0x3fce73ce131ac9f0",
+        "utc_offset": -360,
+        "vicinity": "Denver",
+        "html_attributions": null,
+        "place_predictions_id": "ChIJe_FsKM1-bIcR8MkaE85zzj8",
+        "street_number": "1240",
+        "route": "East Colfax Avenue",
+        "neighborhood": "Central",
+        "political": "United States",
+        "locality": "Denver",
+        "administrative_area_level_2": "Denver County",
+        "administrative_area_level_1": "Colorado",
+        "country": "United States",
+        "postal_code": "80218",
+        "postal_code_suffix": "2253"
+      },
+      "end_location": {
+        "address_components": [
+          {
+            "long_name": "4301",
+            "short_name": "4301",
+            "types": [
+              "street_number"
+            ]
+          },
+          {
+            "long_name": "East Colfax Avenue",
+            "short_name": "E Colfax Ave",
+            "types": [
+              "route"
+            ]
+          },
+          {
+            "long_name": "North",
+            "short_name": "North",
+            "types": [
+              "neighborhood",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver",
+            "short_name": "Denver",
+            "types": [
+              "locality",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Denver County",
+            "short_name": "Denver County",
+            "types": [
+              "administrative_area_level_2",
+              "political"
+            ]
+          },
+          {
+            "long_name": "Colorado",
+            "short_name": "CO",
+            "types": [
+              "administrative_area_level_1",
+              "political"
+            ]
+          },
+          {
+            "long_name": "United States",
+            "short_name": "US",
+            "types": [
+              "country",
+              "political"
+            ]
+          },
+          {
+            "long_name": "80220",
+            "short_name": "80220",
+            "types": [
+              "postal_code"
+            ]
+          },
+          {
+            "long_name": "1115",
+            "short_name": "1115",
+            "types": [
+              "postal_code_suffix"
+            ]
+          },
+          {
+            "long_name": "4301 East Colfax Avenue",
+            "short_name": "4301 East Colfax Avenue",
+            "types": [
+              "street_address"
+            ]
+          }
+        ],
+        "adr_address": "\u003cspan class=\"street-address\"\u003e4301 E Colfax Ave\u003c/span\u003e, \u003cspan class=\"locality\"\u003eDenver\u003c/span\u003e, \u003cspan class=\"region\"\u003eCO\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e80220-1115\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUSA\u003c/span\u003e",
+        "formatted_address": "4301 E Colfax Ave, Denver, CO 80220, USA",
+        "geometry": {
+          "location": {
+            "lat": 39.74070400000001,
+            "lng": -104.9367623
+          },
+          "viewport": {
+            "south": 39.7399459,
+            "west": -104.93676349999998,
+            "north": 39.74095670000001,
+            "east": -104.93676189999996
+          }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+        "id": "72556af78b7b38e9e8867c1e662750d327046a36",
+        "name": "4301 E Colfax Ave",
+        "place_id": "ChIJvyzZmQF8bIcR8Fdz0F73tmQ",
+        "reference": "CpQBhgAAAPG4OBCzFBSKjRo_yHHd5PbdDge8AuYqCbfIPnrhFHYbxNYcpK9Vmlo5-71SQuAlnQV-gMVMJ1CJFPJty9HMovKqUPlZjVB7VwAh3g4nzCvnD4pAx7IQQ6RTPHS8OAOzNhLw2MPogwDY7o6RQDnq1QL5NQVtTRk4-pkGKwVpeBqh4VCrNT6pcoRmqhRpAhM18BIQRzmDiEoN41k5A8wTUsdpMRoUZ457MnP9f337R_3_aeMmqzG04fs",
+        "scope": "GOOGLE",
+        "types": [
+          "street_address"
+        ],
+        "url": "https://maps.google.com/?q=4301+E+Colfax+Ave,+Denver,+CO+80220,+USA\u0026ftid=0x876c7c0199d92cbf:0x64b6f75ed07357f0",
+        "utc_offset": -360,
+        "vicinity": "Denver",
+        "html_attributions": null,
+        "place_predictions_id": "ChIJvyzZmQF8bIcR8Fdz0F73tmQ",
+        "street_number": "4301",
+        "route": "East Colfax Avenue",
+        "neighborhood": "North",
+        "political": "United States",
+        "locality": "Denver",
+        "administrative_area_level_2": "Denver County",
+        "administrative_area_level_1": "Colorado",
+        "country": "United States",
+        "postal_code": "80220",
+        "postal_code_suffix": "1115"
+      },
+      "prebooking_questions": [
+        {
+          "question": "Will you be traveling with an approved escort?",
+          "choices": [
+            true,
+            false
+          ],
+          "code": "assistant"
+        },
+        {
+          "question": "How many children or family members will be traveling with you?",
+          "choices": [
+            0,
+            1,
+            2
+          ],
+          "code": "children"
+        }
+      ],
+      "bookable": false,
+      "service_name": "",
+      "json_legs": [
+        {
+          "startTime": 1475013763000,
+          "endTime": 1475013946000,
+          "departureDelay": 0,
+          "arrivalDelay": 0,
+          "realTime": false,
+          "distance": 241.027,
+          "pathway": false,
+          "mode": "WALK",
+          "route": "",
+          "agencyTimeZoneOffset": -21600000,
+          "interlineWithPreviousLeg": false,
+          "from": {
+            "name": "Origin",
+            "lon": -104.9709958,
+            "lat": 39.7398417,
+            "departure": 1475013763000,
+            "orig": "",
+            "vertexType": "NORMAL"
+          },
+          "to": {
+            "name": "Colfax Ave \u0026 Franklin St",
+            "stopId": "1:12883",
+            "stopCode": "12883",
+            "lon": -104.968175,
+            "lat": 39.739917,
+            "arrival": 1475013946000,
+            "departure": 1475013947000,
+            "nextDeparture": 1475014276,
+            "stopIndex": 14,
+            "stopSequence": 15,
+            "vertexType": "TRANSIT"
+          },
+          "legGeometry": {
+            "points": "avpqFvcu_S?O?U?Q?sA?_@?gB?gB@qA?m@?U?a@",
+            "length": 12
+          },
+          "rentedBike": false,
+          "transitLeg": false,
+          "duration": 183.0,
+          "intermediateStops": [
+
+          ],
+          "steps": [
+            {
+              "distance": 241.027,
+              "relativeDirection": "DEPART",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "EAST",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.970993519632,
+              "lat": 39.74001182628296,
+              "elevation": [
+
+              ]
+            }
+          ],
+          "specialService": false
+        },
+        {
+          "startTime": 1475013947000,
+          "endTime": 1475014487000,
+          "departureDelay": 91,
+          "arrivalDelay": 50,
+          "realTime": true,
+          "distance": 2668.931834750193,
+          "pathway": false,
+          "mode": "BUS",
+          "route": "15",
+          "agencyName": "Regional Transportation District",
+          "agencyUrl": "http://rtd-denver.com",
+          "agencyTimeZoneOffset": -21600000,
+          "routeColor": "0076CE",
+          "routeType": 3,
+          "routeId": "1:15",
+          "routeTextColor": "FFFFFF",
+          "interlineWithPreviousLeg": false,
+          "tripBlockId": "b_15  9",
+          "headsign": "Tower Rd",
+          "agencyId": "RTD",
+          "tripId": "1:110144034",
+          "serviceDate": "20160927",
+          "from": {
+            "name": "Colfax Ave \u0026 Franklin St",
+            "stopId": "1:12883",
+            "stopCode": "12883",
+            "lon": -104.968175,
+            "lat": 39.739917,
+            "arrival": 1475013946000,
+            "departure": 1475013947000,
+            "nextDeparture": 1475014276,
+            "stopIndex": 14,
+            "stopSequence": 15,
+            "vertexType": "TRANSIT"
+          },
+          "to": {
+            "name": "Colfax Ave \u0026 Bellaire St",
+            "stopId": "1:12845",
+            "stopCode": "12845",
+            "lon": -104.936968,
+            "lat": 39.740014,
+            "arrival": 1475014487000,
+            "departure": 1475014488000,
+            "stopIndex": 23,
+            "stopSequence": 24,
+            "vertexType": "TRANSIT"
+          },
+          "legGeometry": {
+            "points": "avpqFbrt_S@c@?yC?{C?s@?g@?a@?]?y@?y@?c@?]?q@???q@?q@?I?]???e@@_@Am@?k@?yC?cA?{@@sB?uF?k@AMCWG]AKAGCYCO?OAKAUAUAEAO??AUA[?M?OA@?K?O?Q@m@?i@?g@?]?e@?_@?k@?a@?s@?E?c@?oC?cA?uB?Q@Q?O?O?Y?W?wB?y@Aw@@qB@uB@sB@wB@qBAaC@m@?i@?e@?_@?kA?g@@g@CsC?iA@u@AkB?}@?kA@o@Ak@?]?O@{@?CAa@B}A?[?wBJ[?w@?mA?w@?g@?A?o@?[?wB?eB?kB?{@?s@?qC?mA?u@?G",
+            "length": 120
+          },
+          "routeShortName": "15",
+          "routeLongName": "East Colfax Avenue",
+          "rentedBike": false,
+          "transitLeg": true,
+          "duration": 540.0,
+          "intermediateStops": [
+            {
+              "name": "Colfax Ave \u0026 High St",
+              "stopId": "1:12897",
+              "stopCode": "12897",
+              "lon": -104.964501,
+              "lat": 39.739936,
+              "arrival": 1475014012000,
+              "departure": 1475014012000,
+              "stopIndex": 15,
+              "stopSequence": 16,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Vine St",
+              "stopId": "1:13003",
+              "stopCode": "13003",
+              "lon": -104.961893,
+              "lat": 39.7399,
+              "arrival": 1475014080000,
+              "departure": 1475014080000,
+              "stopIndex": 16,
+              "stopSequence": 17,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Josephine St",
+              "stopId": "1:13019",
+              "stopCode": "13019",
+              "lon": -104.959123,
+              "lat": 39.739968,
+              "arrival": 1475014132000,
+              "departure": 1475014132000,
+              "stopIndex": 17,
+              "stopSequence": 18,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Elizabeth St",
+              "stopId": "1:12874",
+              "stopCode": "12874",
+              "lon": -104.956005,
+              "lat": 39.7401,
+              "arrival": 1475014186000,
+              "departure": 1475014186000,
+              "stopIndex": 18,
+              "stopSequence": 19,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Fillmore St",
+              "stopId": "1:12878",
+              "stopCode": "12878",
+              "lon": -104.952698,
+              "lat": 39.740091,
+              "arrival": 1475014272000,
+              "departure": 1475014272000,
+              "stopIndex": 19,
+              "stopSequence": 20,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Adams St",
+              "stopId": "1:12840",
+              "stopCode": "12840",
+              "lon": -104.947489,
+              "lat": 39.740073,
+              "arrival": 1475014335000,
+              "departure": 1475014335000,
+              "stopIndex": 20,
+              "stopSequence": 21,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Garfield St",
+              "stopId": "1:12885",
+              "stopCode": "12885",
+              "lon": -104.943664,
+              "lat": 39.740059,
+              "arrival": 1475014380000,
+              "departure": 1475014380000,
+              "stopIndex": 21,
+              "stopSequence": 22,
+              "vertexType": "TRANSIT"
+            },
+            {
+              "name": "Colfax Ave \u0026 Colorado Blvd",
+              "stopId": "1:12864",
+              "stopCode": "12864",
+              "lon": -104.940985,
+              "lat": 39.740023,
+              "arrival": 1475014437000,
+              "departure": 1475014437000,
+              "stopIndex": 22,
+              "stopSequence": 23,
+              "vertexType": "TRANSIT"
+            }
+          ],
+          "steps": [
+
+          ],
+          "serviceName": "Regional Transportation District",
+          "specialService": false
+        },
+        {
+          "startTime": 1475014488000,
+          "endTime": 1475014622000,
+          "departureDelay": 0,
+          "arrivalDelay": 0,
+          "realTime": false,
+          "distance": 159.488,
+          "pathway": false,
+          "mode": "WALK",
+          "route": "",
+          "agencyTimeZoneOffset": -21600000,
+          "interlineWithPreviousLeg": false,
+          "from": {
+            "name": "Colfax Ave \u0026 Bellaire St",
+            "stopId": "1:12845",
+            "stopCode": "12845",
+            "lon": -104.936968,
+            "lat": 39.740014,
+            "arrival": 1475014487000,
+            "departure": 1475014488000,
+            "stopIndex": 23,
+            "stopSequence": 24,
+            "vertexType": "TRANSIT"
+          },
+          "to": {
+            "name": "Destination",
+            "lon": -104.9367623,
+            "lat": 39.740704,
+            "arrival": 1475014622000,
+            "orig": "",
+            "vertexType": "NORMAL"
+          },
+          "legGeometry": {
+            "points": "mvpqF`on_S@z@WC?sCgB?",
+            "length": 5
+          },
+          "rentedBike": false,
+          "transitLeg": false,
+          "duration": 134.0,
+          "intermediateStops": [
+
+          ],
+          "steps": [
+            {
+              "distance": 25.614,
+              "relativeDirection": "DEPART",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "WEST",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.9369684314743,
+              "lat": 39.740071137608304,
+              "elevation": [
+
+              ]
+            },
+            {
+              "distance": 76.202,
+              "relativeDirection": "UTURN_RIGHT",
+              "streetName": "East Colfax Avenue",
+              "absoluteDirection": "EAST",
+              "stayOn": true,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.93724560000001,
+              "lat": 39.7401841,
+              "elevation": [
+
+              ]
+            },
+            {
+              "distance": 57.672,
+              "relativeDirection": "LEFT",
+              "streetName": "parking aisle",
+              "absoluteDirection": "NORTH",
+              "stayOn": false,
+              "area": false,
+              "bogusName": false,
+              "lon": -104.9365047,
+              "lat": 39.740185000000004,
+              "elevation": [
+
+              ]
+            }
+          ],
+          "specialService": false
+        }
+      ]
+    }
+  ]
+}

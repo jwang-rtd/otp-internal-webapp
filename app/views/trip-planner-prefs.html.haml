@@ -1,0 +1,85 @@
+.row
+  .col-xs-12
+    %fieldset.content__section.tripplanner__option
+.row
+  .col-xs-2{style: "padding-right: 5px !important"}
+    %label Modes:
+  .col-xs-10{style: "padding-left: 5px !important"}
+    %input#tp-transit-only-mode{:type=>"checkbox", :name=>"transitOnlyMode", :checked=>"checked",  ng: {model: '$parent.$parent.transitOnlyMode'}}
+    %img.mode_icon{ng: {src: 'images/modes/transit.png'}}
+    Transit
+    %input#tp-bus-only-mode{:type=>"checkbox", :name=>"busOnlyMode", :checked=>"checked",  ng: {model: '$parent.$parent.busOnlyMode'}}
+    %img.mode_icon{ng: {src: 'images/modes/transit.png'}}
+    Bus Only
+    %input#tp-rail-only-mode{:type=>"checkbox", :name=>"railOnlyMode", :checked=>"checked",  ng: {model: '$parent.$parent.railOnlyMode'}}
+    %img.mode_icon{ng: {src: 'images/modes/transit.png'}}
+    Rail Only
+.row
+  .col-xs-2{style: "padding-right: 5px !important"}
+  .col-xs-10{style: "padding-left: 5px !important"}
+    %input#tp-walk-only-mode{:type=>"checkbox", :name=>"walkOnlyMode", :checked=>"checked", style: "margin-left: 0;",  ng: {model: '$parent.$parent.walkOnlyMode'}}
+    %img.mode_icon{ng: {src: 'images/modes/walk.png'}}
+    Walk
+    %input#tp-bike-only-mode{:type=>"checkbox", :name=>"bikeOnlyMode", :checked=>"checked", style: "margin-left: 10px;",  ng: {model: '$parent.$parent.bikeOnlyMode'}}
+    %img.mode_icon{ng: {src: 'images/modes/bicycle.png'}}
+    Bike
+.row
+  .col-xs-2{style: "padding-right: 5px !important"}
+  .col-xs-10{style: "padding-left: 5px !important"}
+    %input#tp-park-ride-mode{:type=>"checkbox", :name=>"parkAndRideMode", :checked=>"checked", style: "margin-left: 0;",  ng: {model: '$parent.$parent.parkAndRideMode'}}
+    %img.mode_icon{ng: {src: 'images/modes/auto.png'}}
+    Park and ride
+    %input#tp-bike-transit-mode{:type=>"checkbox", :name=>"bikeTransitMode", :checked=>"checked", style: "margin-left: 10px;",  ng: {model: '$parent.$parent.bikeTransitMode'}}
+    %img.mode_icon{ng: {src: 'images/modes/bicycle.png'}}
+    Bike to/from transit
+.row.max-pref--headers{style: "margin-top: 20px"}
+  .col-xs-4{style: "padding-right: 5px !important"}
+  .col-xs-2{style: "padding-left: 5px !important"}
+    Time (min)
+  .col-xs-2{style: "padding-left: 5px !important"}
+    Distance (miles)
+  .col-xs-4{style: "padding-right: 5px !important"}
+    Rate (miles/hr)
+.row.form__otp--compact{style: "margin-top: 8px"}
+  .col-xs-4{style: "padding-right: 5px !important"}
+    %label{:for => "tp-max-walk-time"} Max walk:
+  .col-xs-2{style: "padding-left: 5px !important"}
+    %input#tp-max-walk-time{:type=>"number", :name=>"maxWalkTime", :value=>"15", :min=>"1", :max=>"200",  ng: {model: '$parent.$parent.maxWalkTime', change: 'changeMaxWalkTime(maxWalkTime)'}}
+  .col-xs-2{style: "padding-left: 5px !important"}
+    %input#tp-max-walk-distance{:type=>"number", :name=>"maxWalkDistance", :value=>"0.5", :min=>"0", :max=>"10", :step=>".01", style: "width: 100% !important",  ng: {model: '$parent.$parent.maxWalkDistance', change: 'changeMaxWalkDistance(maxWalkDistance)'}}
+  .col-xs-4{style: "padding-right: 5px !important"}
+    %select#tp-max-walk-pace.select.tripplanner__when{style: "width: 100% !important", :name=>"maxWalkPace", ng: {model: '$parent.$parent.maxWalkPace', change: 'changeMaxWalkPace(maxWalkPace)'} }
+      %option{:value => "slow"} Slow: 1 mph
+      %option{:selected => "selected", :value => "medium"} Medium: 2 mph
+      %option{:value => "fast"} Fast: 3 mph
+.row.form__otp--compact
+  .col-xs-4{style: "padding-right: 5px !important"}
+    %label{:for => "tp-max-bike-time"} Max bike:
+  .col-xs-2{style: "padding-left: 5px !important"}
+    %input#tp-max-bike-time{:type=>"number", :name=>"maxBikeTime", :value=>"15", :min=>"1", :max=>"225",  ng: {model: '$parent.$parent.maxBikeTime', change: 'changeMaxBikeTime(maxBikeTime)'}}
+  .col-xs-2{style: "padding-left: 5px !important"}
+    %input#tp-max-bike-distance{:type=>"number", :name=>"maxBikeDistance", :value=>"3.00", :min=>"0", :max=>"60", :step=>".01", style: "width: 100% !important",  ng: {model: '$parent.$parent.maxBikeDistance', change: 'changeMaxBikeDistance(maxBikeDistance)'}}
+  .col-xs-4{style: "padding-right: 5px !important"}
+    %select#tp-max-bike-pace.select.tripplanner__when{style: "width: 100% !important", :name=>"maxBikePace", ng: {model: '$parent.$parent.maxBikePace', change: 'changeMaxBikePace(maxBikePace)'} }
+      %option{:value => "slow"} Slow: 8 mph
+      %option{:selected => "selected", :value => "medium"} Medium: 12 mph
+      %option{:value => "fast"} Fast: 16 mph
+.row.form__otp--compact{style: "margin-top: 20px"}
+  .col-xs-4{style: "padding-right: 5px !important"}
+    %label Transfer times:
+  .col-xs-8{style: "padding-left: 5px !important"}
+    %label{:for => "tp-min-transfer-time"} Min:
+    %input#tp-min-transfer-time{:type=>"number", :name=>"minTransferTime", :value=>"5", :min=>"1", :max=>"60", ng: {model: '$parent.$parent.minTransferTime'}}
+    %label{:for => "tp-max-transfer-time"} Max:
+    %input#tp-max-transfer-time{:type=>"number", :name=>"maxTransferTime", :value=>"30", :min=>"1", :max=>"60", ng: {model: '$parent.$parent.maxTransferTime'}} &nbsp;minutes
+.row.form__otp--compact
+  .col-xs-5{style: "padding-right: 5px !important"}
+    %label{:for => "tp-allow-departures-time"} Allow departures up to:
+  .col-xs-7{style: "padding-left: 5px !important"}
+    %input#tp-allow-departures-time{:type=>"number", :name=>"allowDeparturesTime", :value=>"5", :min=>"0", :max=>"30", ng: {model: '$parent.$parent.allowDeparturesTime'}} &nbsp;minutes early
+
+.row.form__otp--compact
+  .col-xs-5{style: "padding-right: 5px !important"}
+    %span Show trips within <strong> {{$parent.$parent.tripShownRangeTime}}</strong> hours
+  .col-xs-7{style: "padding-left: 5px !important"}
+    %slider.filterTripsRangeTime{ng:{'model'=>'$parent.$parent.tripShownRangeTime'}, 'max'=>'24', 'min'=>'1', 'step'=>'0.5'}

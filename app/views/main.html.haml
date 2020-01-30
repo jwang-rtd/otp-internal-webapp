@@ -1,0 +1,21 @@
+.mfp-content.fullHeight.fullWidth
+  %ul#main-nav-tabs.nav.nav-tabs
+    %li.active
+      %a.btn.tripResultsTab{:href => '#planner-tab', "data-toggle" => 'tab', ng: {'click' => 'clickPlanTripTab($event)'}}Plan a Trip
+    %li{ng: {repeat: 'tab in resultsTabbed track by tab.id'}}
+      %button.btn.btn-link.tripResultsTab{id: "{{tab.id}}", data:{ toggle:"tab", target:"#itinerary-tab-{{tab.id}}" }, ng: {'click' => 'clickTripItinerariesTab($event)', 'bind-html' =>'tab.name'} }
+      %i.fa.fa-times.fa-3{ng: {click: 'closeTripItinerariesTab($event)'}}
+  #tab-container.tab-content
+    #planner-tab.tab-pane.active.row
+      .col-xs-4
+        %span{ng: {include: "'views/trip-planner-form.html'"}}
+      .bigMap.col-xs-8.fullHeight
+        %section.map{style:'height: 100%;width: 100%;'}
+          .map-canvas{'ui-map' => 'mainMap', style: 'height: 100%; width:100%;', "ui-options" => "mapOptions", "ui-event" => "{'map-tilesloaded': 'handleBoundary()'}"}
+    .tab-pane{ng: {repeat: 'tab in resultsTabbed track by tab.id'}, id:'itinerary-tab-{{tab.id}}'}
+      %span{ng: {include: "tab.multileg ? 'views/plan-multi-leg.html' : 'views/plan.html'"}}
+  .version{style: "padding-top: 10px"}
+    int-v0.19.06-rc3
+#map{style: "display:none"}
+#hiddenmap{style: "display:none"}
+%span{ng: {include: "'views/map-layer-toggle.html'"}}

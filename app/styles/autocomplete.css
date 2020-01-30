@@ -1,0 +1,457 @@
+/* AUTOCOMPLETE */
+.autocompleteWrapper {
+  width: 100%;
+}
+
+.searchclear {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 20px;
+  height: 14px;
+  margin: auto;
+  font-size: 2em;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.addstop {
+  position: absolute;
+  right: -16px;
+  top: -11px;
+  bottom: 20px;
+  height: 14px;
+  margin: auto;
+  font-size: 2em;
+  cursor: pointer;
+  color: #ccc;
+}
+
+
+
+.trip-error div{
+  margin-top: -1.5em;
+  margin-bottom: -1em;
+  font-weight: bold;
+  color: #C62828;
+}
+
+.trip-error-small div{
+  margin-top: -.3em;
+  margin-bottom: -.1em;
+  font-weight: bold;
+  color: #C62828;
+  min-height: 1.1em;
+}
+
+input.ng-invalid
+{
+  border:2px solid #f00 !important;
+}
+
+.invalid-clear
+{
+  border:2px solid #f00 !important;
+}
+
+
+.error_small {
+  margin-right: 1em;
+  font-weight: bold !important;
+  font-size: 1em !important;
+}
+
+.fix {
+  height: 41px !important;
+}
+
+label.form__error {
+  margin-top: 3em !important;
+  color: #C62828 !important;
+}
+
+.clear-button a {
+  top: -3px;
+  padding-top: 11px;
+  right: 3px;
+  padding-bottom: 11px;
+  font-size: .75rem !important;
+  min-width: 20px; border-top-left-radius:0px; border-bottom-left-radius:0px;
+  border-color: #dcdcdc;
+  border-style: solid;
+  border-width: 2px 2px 2px 0;
+}
+
+
+/*.autocomplete ul{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-left: 1px solid #888;
+  border-right: 1px solid #888;
+  border-bottom: 1px solid #888;
+  z-index: 1;
+  -webkit-padding-start: 0px;
+}
+
+.autocomplete li{
+  text-align: left;
+  list-style:none;
+  width: 100%;
+  padding:0.4em;
+  background-color: #fff;
+
+}
+
+.autocomplete li.selectable{
+  padding-left:2em;
+}
+
+.autocomplete li.active{
+  width: 100%;
+  background-color: #4bf;
+}
+
+.autocomplete .highlight {
+  background-color: #E2E2E2;
+}
+
+.autocomplete li.active .highlight {
+  background: #666;
+  color: #fff;
+}*/
+
+#useCurrentLocation {
+  margin-bottom: 10px;
+}
+
+.mode_icon {
+  height: 1.3em;
+}
+
+.ui-datepicker {
+  background-color: #fff;
+  border: 1px solid #66AFE9;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(102,175,233,.6);
+  display: none;
+  margin-top: 4px;
+  padding: 10px;
+  width: 240px;
+}
+.ui-datepicker a,
+.ui-datepicker a:hover {
+  text-decoration: none;
+}
+.ui-datepicker a:hover,
+.ui-datepicker td:hover a {
+  color: #2A6496;
+  -webkit-transition: color 0.1s ease-in-out;
+  -moz-transition: color 0.1s ease-in-out;
+  -o-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-header {
+  margin-bottom: 4px;
+  text-align: center;
+}
+.ui-datepicker .ui-datepicker-title {
+  font-weight: 700;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  cursor: default;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  height: 20px;
+  line-height: 1;
+  margin-top: 2px;
+  width: 30px;
+}
+.ui-datepicker .ui-datepicker-prev {
+  float: left;
+  text-align: left;
+}
+.ui-datepicker .ui-datepicker-next {
+  float: right;
+  text-align: right;
+}
+.ui-datepicker .ui-datepicker-prev:before {
+  content: "\e079";
+}
+.ui-datepicker .ui-datepicker-next:before {
+  content: "\e080";
+}
+.ui-datepicker .ui-icon {
+  display: none;
+}
+.ui-datepicker .ui-datepicker-calendar {
+  table-layout: fixed;
+  width: 100%;
+}
+.ui-datepicker .ui-datepicker-calendar th,
+.ui-datepicker .ui-datepicker-calendar td {
+  text-align: center;
+  padding: 4px 0;
+}
+.ui-datepicker .ui-datepicker-calendar td {
+  border-radius: 4px;
+  -webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  -moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  -o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-calendar td:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-calendar td a {
+  text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-current-day {
+  background-color: #4289cc;
+}
+.ui-datepicker .ui-datepicker-current-day a {
+  color: #fff
+}
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-unselectable:hover {
+  background-color: #fff;
+  cursor: default;
+}
+
+
+
+.autocomplete__suggestions.active {
+  max-width: 100%; }
+  @media all and (min-width: 48em) {
+    .autocomplete__suggestions.active {
+      max-width: 112%;
+      width: 112%; } }
+  .autocomplete__suggestions.active .autocomplete__groups .autocomplete__group {
+    width: 100%; }
+  @media all and (min-width: 48em) {
+    .autocomplete__suggestions.active .autocomplete__link--icon {
+      width: 34px;
+      height: 34px;
+      line-height: 24px; }
+      .autocomplete__suggestions.active .autocomplete__link--icon svg {
+        height: 24px;
+        width: 24px; }
+      }
+.autocomplete__suggestions.active .autocomplete__link--name {
+  font-size: 0.750rem;
+  padding-left: .5rem;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  width: 100%;
+}
+
+
+.autocomplete-input__container {
+  position: relative;
+  *zoom: 1; }
+  .autocomplete-input__container:before, .autocomplete-input__container:after {
+    content: " ";
+    display: table; }
+  .autocomplete-input__container:after {
+    clear: both; }
+
+.autocomplete__suggestions {
+  position: absolute;
+  max-width: 600px;
+  top: 37px;
+  left: 0px;
+  border: 0 none;
+  border-bottom: 0 none;
+  z-index: 30; }
+  .autocomplete__suggestions ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+  .autocomplete__suggestions .autocomplete__groups {
+    border-top: 0 none; }
+    .autocomplete__suggestions .autocomplete__groups .autocomplete__group {
+      background-color: #fff;
+      font-size: 0.750rem;
+      font-family: "ProximaNovaBold", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      color: #5c5c5c;
+      border-bottom: 1px solid #dcdcdc;
+    }
+      .autocomplete__suggestions .autocomplete__groups .autocomplete__group--name {
+        display: block;
+        padding: 0.3em 0.5em;
+        line-height: 1em;
+        background-color: #eee;
+    }
+      .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more {
+        font-size: 0.688rem;
+        display: block;
+        padding: 0;
+        border-bottom: 1px solid #dcdcdc;
+        line-height: 1em;
+        text-align: right;
+        background-color: #f9f9f9;
+        text-transform: uppercase; }
+        .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more a, .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more button {
+          display: block;
+          padding: 0.6em 1em;
+          cursor: pointer;
+          background-color: transparent;
+          border: 0 none;
+          text-align: right;
+          width: 100%;
+          text-transform: uppercase;
+          color: #016f98; }
+          .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more a:hover, .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more a:focus, .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more button:hover, .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more button:focus {
+            background-color: #f4f4f4;
+            outline: 0 none; }
+            .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more a:hover *, .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more a:focus *, .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more button:hover *, .autocomplete__suggestions .autocomplete__groups .autocomplete__group--more button:focus * {
+              text-decoration: none; }
+
+
+  .autocomplete__suggestions .autocomplete__items .autocomplete__item {
+    background-color: #fff;
+    font-size: 1rem;
+    width: 100%;
+    font-family: "ProximaNova", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    border-bottom: 1px solid #dcdcdc; }
+  .autocomplete__suggestions a.autocomplete__link, .autocomplete__suggestions button.autocomplete__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: left;
+    padding: 0;
+    color: #454545;
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    max-height: 50px;
+    width: 100%;
+    *zoom: 1; }
+    .autocomplete__suggestions a.autocomplete__link:hover, .autocomplete__suggestions a.autocomplete__link:focus, .autocomplete__suggestions button.autocomplete__link:hover, .autocomplete__suggestions button.autocomplete__link:focus {
+      background-color: #f4f4f4;
+      outline: 0 none; }
+      .autocomplete__suggestions a.autocomplete__link:hover *, .autocomplete__suggestions a.autocomplete__link:focus *, .autocomplete__suggestions button.autocomplete__link:hover *, .autocomplete__suggestions button.autocomplete__link:focus * {
+        text-decoration: none; }
+    .autocomplete__suggestions a.autocomplete__link:before, .autocomplete__suggestions a.autocomplete__link:after, .autocomplete__suggestions button.autocomplete__link:before, .autocomplete__suggestions button.autocomplete__link:after {
+      content: " ";
+      display: table; }
+    .autocomplete__suggestions a.autocomplete__link:after, .autocomplete__suggestions button.autocomplete__link:after {
+      clear: both; }
+    .autocomplete__suggestions a.autocomplete__link .autocomplete__link--icon, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--icon {
+      width: 44px;
+      height: 44px;
+      font-size: 0.750rem;
+      color: #999;
+      line-height: 34px;
+      text-align: center;
+      padding: 5px;
+      display: inline-block; }
+      .autocomplete__suggestions a.autocomplete__link .autocomplete__link--icon svg, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--icon svg {
+        background-color: #fff;
+        height: 34px;
+        width: 34px;
+        border-radius: 4px; }
+      @media all and (min-width: 48em) {
+        .autocomplete__suggestions a.autocomplete__link .autocomplete__link--icon, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--icon {
+          width: 40px;
+          height: 40px;
+          line-height: 30px; }
+          .autocomplete__suggestions a.autocomplete__link .autocomplete__link--icon svg, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--icon svg {
+            height: 30px;
+            width: 30px; } }
+    .autocomplete__suggestions a.autocomplete__link .autocomplete__link--content, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--content {
+      position: relative;
+      display: inline-block;
+      padding-right: .8rem;
+      line-height: 0.938em;
+      overflow: hidden; }
+    .autocomplete__suggestions a.autocomplete__link .autocomplete__link--name, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--name {
+      font-family: "ProximaNovaBold", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      color: #454545;
+      font-size: 0.750rem;
+      padding-left: .5rem;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+      @media all and (min-width: 48em) {
+        .autocomplete__suggestions a.autocomplete__link .autocomplete__link--name, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--name {
+          font-size: 0.875rem;
+          padding-left: .8rem; } }
+      .autocomplete__suggestions a.autocomplete__link .autocomplete__link--name span, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--name span {
+        color: #007fae; }
+    .autocomplete__suggestions a.autocomplete__link .autocomplete__link--details, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--details {
+      font-family: "ProximaNova", Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      color: #5c5c5c;
+      font-size: 0.688rem;
+      padding-left: .5rem;
+      display: block; }
+      @media all and (min-width: 48em) {
+        .autocomplete__suggestions a.autocomplete__link .autocomplete__link--details, .autocomplete__suggestions button.autocomplete__link .autocomplete__link--details {
+          font-size: 0.750rem;
+          padding-left: .8rem; } }
+
+.autocomplete__suggestions.active {
+  top: 33px;
+  border: 1px solid #dcdcdc;
+  border-top: 0 none;
+  border-bottom: 0 none;
+  box-shadow: 0 1px 2px rgba(150, 150, 150, 0.4); }
+  .autocomplete__suggestions.active .autocomplete__groups {
+    border-top: 1px solid #dcdcdc; }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0.5; }
+  50% {
+    opacity: 1; }
+  to {
+    opacity: 0.5; } }
+
+.autocomplete__item--loader {
+  font-family: "ProximaNovaBold", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  background-color: #fff;
+  border-bottom: 1px solid #dcdcdc;
+  text-align: center;
+  width: 100%; }
+  .autocomplete__item--loader img {
+    margin: 0 auto;
+    padding: 10px;
+    -webkit-animation-name: fadein;
+            animation-name: fadein;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+}
+
+.autocomplete .active {
+  background-color: #eeeeee !important;
+}
+
+.autocomplete__groups {
+  color: red !important;
+}

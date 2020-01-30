@@ -1,0 +1,14 @@
+.container{'ng-controller' => 'LoginController'}
+ .page-header Login
+ %form.form-horizontal{:ng => {:submit => 'submit()'}}
+  .form-group
+   %label.col-sm-2.control-label{:for => "username"} Username:
+   .col-sm-4
+    %input.form-control{:id => "username", :type => "text", :ng => { :model => "username" }}
+  .form-group
+   %label.col-sm-2.control-label{:for => "password"} Password:
+   .col-sm-4
+    %input.form-control{:id => "password", :type => "password", :ng => { :model => "password" }}
+  .form-group
+   .col-sm-offset-2.col-sm-4
+    %input.btn.btn-primary{:type => "submit", :value => "Submit", :ng => { :click => "submit()" }}

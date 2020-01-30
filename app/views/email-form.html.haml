@@ -1,0 +1,33 @@
+.modal-header
+ %button#ef-close.close{type: 'button', ng: {'click' => 'closeModal()'}} &times;
+ %h3.modal-title Email Selected Trip Itinerary
+%form#tp-form.content__block.tripplanner__form{novalidate: '', ng: {'submit' => 'submitEmail()'}}
+ .modal-body
+  .row
+   .col-xs-12
+    %label{:for => "ef-email-addresses"} Email address(es):
+  .row.trip-error
+   .col-xs-12.text-right
+    %span#emailAddressesError.trip-error{style: 'display:none;'}
+     You must enter one or more valid email addresses.
+  .row
+   .col-xs-12
+    %textarea#ef-email-addresses{:type=>"text", :maxlength=>"300", :name=>"emailAddresses", :rows=>"3", style: "width: 100% !important", :title => "Please enter one or more recipient email addresses, separated by commas.", ng: {model: 'emailAddresses', required: 'true'} }
+  .row{style: "padding-top: 10px"}
+   .col-xs-12
+    %label{:for => "ef-subject-line"} Subject line:
+  .row.trip-error
+   .col-xs-12.text-right
+    %span#subjectError.trip-error{style: 'display:none;'}
+     You must enter a subject line.
+  .row
+   .col-xs-12
+    %textarea#ef-subject-line{:type=>"text", :maxlength=>"300", :name=>"subjectLine", :rows=>"3", style: "width: 100% !important", :title => "Please edit or enter a new subject line if desired.", ng: {model: 'subjectLine',  required: 'true'} }
+ .modal-footer
+  .row
+   .col-xs-12
+    .btn-toolbar.btn-sm.pull-right
+     %button#ef-email-btn.btn.btn-primary.btn-sm{:type => "submit"}
+      Email
+     %button#ef-cancel-btn.btn.btn-default.btn-sm{type: 'button', ng: {'click' => 'closeModal()'}}
+      Cancel

@@ -1,0 +1,12 @@
+.lvl-over {
+  border: 2px dashed black !important;
+}
+
+.lvl-target {
+  background-color: #ddd; 
+  opacity: .5;
+}
+
+[draggable] {
+  cursor: move;
+}

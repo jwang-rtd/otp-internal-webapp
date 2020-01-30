@@ -1,0 +1,27 @@
+.container{'ng-controller' => 'AdminController'}
+ .page-header Edit configuration
+
+ %form.form-group
+  %label
+   %input{:type => "radio", :name => "configType", :value => "internal", :ng => { :model => "configType", :change => "change()"}}
+   Internal
+  %label
+   %input{:type => "radio", :name => "configType", :value => "external", :ng => { :model => "configType", :change => "change()"}}
+   External
+ %form.form-horizontal{:ng_if => "config", :name => "form"}
+  .form-group{'ng-repeat' => 'item in config'}
+   %label.col-sm-2.control-label{:for => "{{item.key}}"} {{item.key}}:
+   .col-sm-4{ :ng_if => "item.type == 'number'" }
+    %input.form-control{:id => "{{item.key}}", :type => "number", :step => "{{item.step}}", :ng_model => "item.value" }
+   .col-sm-4{ :ng_if => "item.type == 'text'" }
+    %input.form-control{:id => "{{item.key}}", :name => "{{item.key}}", :type => "text", :ng_model => "item.value", :ng_pattern => "item.pattern" }
+    %span{:ng_show => "form.{{item.key}}.$invalid"} {{item.hint}}
+   .col-sm-4{ :ng_if => "item.type == 'checkbox'" }
+    %input.form-control{:id => "{{item.key}}", :type => "checkbox", :ng => { :model => "item.value", :true_value => "'true'", :false_value => "'false'"}}
+   .col-sm-4{ :ng_if => "item.type == 'select'" }
+    %select.form-control.selectpicker{:id => "{{item.key}}", :ng_model => "item.value", :ng_options => "o for o in item.options" }
+
+  .form-group
+   .col-sm-offset-2.col-sm-4
+    %input.btn.btn-primary{:type => "button", :value => "Save", :ng => { :click => "save()", :disabled => "form.$invalid" }}
+    %span.badge{:id => "alert", :style => "display:none;"} success

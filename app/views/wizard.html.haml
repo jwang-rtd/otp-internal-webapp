@@ -1,0 +1,558 @@
+.tripPlanResults.mfp-container.mfp-inline-holder.container
+ .mfp-content.row
+  %span{'us-spinner' => '', 'spinner-key' => "spinner-wizard"}
+  #mfp-tripplanner.col-xs-4
+   #itineraries
+    %h3.otp--header Trip Details
+    .refineSearch
+     .row
+      .col-xs-12{ng:{show: "tripPlanningPrefsObject.fromTimeType === 'arrive'"}}
+       %strong Selecting segment {{wizardSegmentIndex}} of {{tripPlanningPrefsObject.waypoints.length - 1}} (REVERSE ORDER)
+      .col-xs-12{ng:{show: "tripPlanningPrefsObject.fromTimeType != 'arrive'"}}
+       %strong Selecting segment {{wizardSegmentIndex + 1}} of {{tripPlanningPrefsObject.waypoints.length - 1}}
+     .row
+      .col-xs-12
+       %strong From:
+       {{tripPlanningPrefsObject.waypoints[wizardSegmentIndex].location}}
+     .row
+      .col-xs-12
+       %strong To:
+       {{tripPlanningPrefsObject.waypoints[wizardSegmentIndex + 1].locationDetails | placeLabel}}
+     .row
+      .col-xs-12.capitalize
+       %strong {{fromTimeType | departType}} -
+       {{fromDate | date:''}}
+       {{fromTime | date:'h:mm a'}}
+     %hr.dashed
+     .row.refineSearch-inputs
+      .col-xs-6
+       Options to show:
+       %input{type: 'number', min:1, max:10, ng:{'model'=>'$parent.routesToShow'}}
+      .col-xs-6{style: "padding-right: 0px !important; padding-left: 0px !important"}
+       Sort by:
+       %select{ng:{'model'=>'$parent.routesSortBy'}}
+        %option{value:'duration'}
+         Travel Time
+        %option{value:'end_time'}
+         Arrival Time
+        %option{value:'walk_time'}
+         Walk Time
+        %option{value:'transfers'}
+         Fewer Transfers
+        %option{value:'fare'}
+         Fare
+    %h3.otp--header Suggested itineraries:
+    %ul.itineraries-container
+     %li.itinerary{ng: {click: 'selectItinerary($index, $event)', repeat: 'itinerary in filteredItineraries track by $index', class: '{"selected_header": $index == wizardSelectedItineraryIndex}'} }
+      .trip--count
+       Trip {{$index + 1}}
+      .row{ng: {'show' => 'itinerary.searchPrefsWarnings'}}
+       .col-xs-12
+        %span{ng: {'bind-html'=>'itinerary.searchPrefsWarnings'}}
+      .row
+       .col-xs-12
+        .itineraryOverviewIcons
+         %span{style: '', ng: {repeat: 'leg in itinerary.json_legs track by $index'}}
+          %img{ng: {if: 'leg.mode == "WALK"', src: 'images/modes/walk.png'}}
+          %img{ng: {if: 'leg.mode == "BUS"', src: 'images/modes/transit.png'}}
+          %img{ng: {if: 'leg.mode == "BICYCLE"', src: 'images/modes/bicycle.png'}}
+          %img{ng: {if: 'leg.mode == "CAR"', src: 'images/modes/auto.png'}}
+          %img{ng: {if: 'leg.mode == "TRAM" || leg.mode == "RAIL"', src: 'images/modes/streetcar.png'}}
+          %span.route-icon{style: 'margin-left: 2px; padding: 0px 4px; color: #{{leg.routeTextColor}}', ng: {attr: {style:'background-color:#{{leg.routeColor}}; color: #{{leg.routeTextColor}}'}, if: 'leg.routeShortName'}} {{leg.routeShortName}}
+          %i.fa.fa-exclamation-triangle{ng: {if: 'leg.warning'}, title: '{{leg.warning}}'}
+          %i.fa.fa-lg.fa-chevron-right{ng: {if: '!$last'}}
+      .row.itinerary-departures
+       .col-xs-12
+        %span{ng:{'show'=>'itinerary.bus_depart'}}
+         {{itinerary.bus_depart | date:"shortTime"}} bus departure
+        %span{ng:{'show'=>'itinerary.rail_depart'}}
+         {{itinerary.rail_depart | date:"shortTime"}} rail departure
+      .row.real-time-update{ng:{'show'=>'(itinerary.real_bus_depart || itinerary.real_rail_depart) && showRealtime'}}
+       .col-xs-12
+        %span{ng:{'show'=>'itinerary.real_bus_depart'}}
+         Est. {{itinerary.real_bus_depart | date:"shortTime"}} bus departure
+         %svg{"enable-background" => "new 0 0 8 8", :height => "8", :viewbox => "0 0 8 8", :width => "8", :xmlns => "http://www.w3.org/2000/svg"}
+          %g#signal{:fill => "#007fae"}
+           %path#first{:d => "m4.02 8c-.468 0-.848-.38-.848-.848 0-1.282-1.045-2.326-2.326-2.326-.468 0-.848-.38-.848-.848s.38-.848.848-.848c2.219 0 4.03 1.806 4.03 4.03-.004.465-.384.845-.851.845"}
+           %path#second{:d => "m7.152 7.539c-.467 0-.848-.38-.848-.848 0-2.757-2.243-4.996-4.996-4.996-.467 0-.848-.38-.848-.848s.381-.847.848-.847c3.692 0 6.692 3 6.692 6.695 0 .464-.38.844-.848.844"}
+        %span{ng:{'show'=>'itinerary.real_rail_depart'}}
+         Est. {{itinerary.real_rail_depart | date:"shortTime"}} rail departure
+         %svg{"enable-background" => "new 0 0 8 8", :height => "8", :viewbox => "0 0 8 8", :width => "8", :xmlns => "http://www.w3.org/2000/svg"}
+          %g#signal{:fill => "#007fae"}
+           %path#first{:d => "m4.02 8c-.468 0-.848-.38-.848-.848 0-1.282-1.045-2.326-2.326-2.326-.468 0-.848-.38-.848-.848s.38-.848.848-.848c2.219 0 4.03 1.806 4.03 4.03-.004.465-.384.845-.851.845"}
+           %path#second{:d => "m7.152 7.539c-.467 0-.848-.38-.848-.848 0-2.757-2.243-4.996-4.996-4.996-.467 0-.848-.38-.848-.848s.381-.847.848-.847c3.692 0 6.692 3 6.692 6.695 0 .464-.38.844-.848.844"}
+      %hr.dashed
+      .row
+       .col-xs-12
+        %span
+         %strong Trip length:
+         {{itinerary.duration | travelTime }}
+      .row.itinerary-doors
+       .col-xs-12
+        %span
+         %strong Duration:
+         {{itinerary.start_time | date:"short"}} to {{itinerary.end_time | date:"short"}}
+      .row
+       .col-xs-12
+        %span{ng:{'show'=>'itinerary.transfers > 0'}}
+         %strong Transfers:
+         {{itinerary.transfers}}
+      .row
+       .col-xs-12
+        %span
+         %strong Wait time:
+         {{itinerary.wait_time | travelTime}}
+      .row
+       .col-xs-12.itinerary-sub-info
+        %span{ng:{'show'=>'itinerary.walk_time > 0'}}
+         %strong Walk time:
+         {{itinerary.walk_time | travelTime }}
+        %span{ng:{'show'=>'itinerary.walk_distance > 0'}}
+         %strong Walk distance:
+         {{itinerary.walk_distance | distance}}
+        %span{ng:{'show'=>'itinerary.bike_distance > 0'}}
+         %strong Bike distance:
+         {{itinerary.bike_distance | distance}}
+        %span{ng:{'show'=>'itinerary.bike_time > 0'}}
+         %strong Bike time:
+         {{itinerary.bike_time | travelTime}}
+      .row.itinerary-warning
+       .col-xs-12{ng: {if: 'itinerary.hasNext == false'}}
+        %i.fa.fa-exclamation-triangle
+        %span.warning
+         Alert - Next departure over 2 hours
+     .row
+      .col-xs-12
+       %button.additional-filters.collapsed.btn.btn-secondary{type: 'button', "data-toggle" => "collapse", "data-target" => "#additionalFilter-{{$index}}", "aria-expanded" => "false", "aria-controls" =>"additionalFilter-{{$index}}", style: "width: 100% !important; text-align: left"}
+        Additional Filter Criteria
+     .collapse{id:"additionalFilter-{{$index}}"}
+      .row{ng: {show: 'transferSlider.max > 0'}}
+       .col-xs-12
+        %span Transfer time <strong>less than {{transferSlider.value | travelTime}}</strong>
+        .pull-right Max: {{transferSlider.max | travelTime}}
+        %slider.filterTransferTime{ng:{'model'=>'transferSlider.value'}, 'max'=>'transferSlider.max', 'min'=>'1', 'data-slider-tooltip'=>'hide', 'step'=>'60'}
+      .row{ng: {show: 'walkSlider.max > 0'}}
+       .col-xs-12
+        %span Walk distance <strong>less than {{walkSlider.value | distance}}</strong>
+        .pull-right Max: {{walkSlider.max | distance}}
+        %slider.filterWalkDistance{ng:{'model'=>'walkSlider.value'}, 'max'=>'walkSlider.max', 'min'=>'1', 'data-slider-tooltip'=>'hide', 'step'=>'1'}
+      .row{ng: {show: 'bikeSlider.max > 0'}}
+       .col-xs-12
+        %span Bike distance <strong>less than {{bikeSlider.value | distance}}</strong>
+        .pull-right Max: {{bikeSlider.max | distance}}
+        %slider.filterWalkDistance{ng:{'model'=>'bikeSlider.value'}, 'max'=>'bikeSlider.max', 'min'=>'1', 'data-slider-tooltip'=>'hide', 'step'=>'1'}
+    .row.tripplanner-leave-links.tripplanner__actions
+     .col-xs-12
+      %button.btn.btn-primary.btn--full{type: 'button', ng: {'click' => 'selectAndContinue()', 'show' => 'wizardSelectedItineraryIds.length < (tripPlanningPrefsObject.waypoints.length - 2)'}}
+       %span Select and Continue
+      %button.btn.btn-primary.btn--full{type: 'button', ng: {'click' => 'selectAndContinue()', 'show' => 'wizardSelectedItineraryIds.length == (tripPlanningPrefsObject.waypoints.length - 2)'}}
+       %span Select and Finish
+    .row.tripplanner-leave-links.tripplanner__actions
+     .col-xs-12.text-center
+      %button#tp-reverse.otp--button{type: 'button', ng: {'click' => 'back()', 'disabled' => 'disableWizardBack()'}}
+       %i.fa.fa-arrow-left
+       %span Back
+      %button#tp-email.otp--button{type: 'button', ng: {'click' => 'closeModal()'}}
+       %i.fa.fa-times-circle
+       %span Cancel
+
+  #wizardSelectedItinerary.col-xs-4{ng: {'show' => 'wizardSelectedItinerary'}}
+   .itineraryDetailOverview
+    %h3.otp--header Trip Itinerary
+    .row
+     .col-xs-12
+      .itineraryOverviewIcons
+       %span{style: '', ng: {repeat: 'leg in wizardSelectedItinerary.json_legs track by $index'}}
+        %img{ng: {if: 'leg.mode == "WALK"', src: 'images/modes/walk.png'}}
+        %img{ng: {if: 'leg.mode == "BUS"', src: 'images/modes/transit.png'}}
+        %img{ng: {if: 'leg.mode == "BICYCLE"', src: 'images/modes/bicycle.png'}}
+        %img{ng: {if: 'leg.mode == "CAR"', src: 'images/modes/auto.png'}}
+        %img{ng: {if: 'leg.mode == "TRAM" || leg.mode == "RAIL"', src: 'images/modes/streetcar.png'}}
+        %span.route-icon{style: 'margin-left: 2px; padding: 0px 4px; color: rgb(255, 255, 255);', ng: {attr: {style:'background-color:#{{leg.routeColor}}; color: #{{leg.routeTextColor}}'}, if: 'leg.routeShortName'}} {{leg.routeShortName}}
+        %i.fa.fa-exclamation-triangle{ng: {if: 'leg.warning'}, title: '{{leg.warning}}'}
+        %i.fa.fa-lg.fa-chevron-right{ng: {if: '!$last'}}
+    .row
+     .col-xs-12
+      %strong.otp-label Trip length:
+      {{wizardSelectedItinerary.travelTime}}
+    .row.m--bottom
+     .col-xs-12
+      %strong.otp-label Duration:
+      {{selectedItinerary.start_time | date :"short"}} to {{selectedItinerary.end_time | date :"short"}}
+   .itineraryScroller
+    .itineraryDetail
+     .row
+      .col-xl-1.col-md-2.col-xs-3
+       %i.origin.fa.fa-map-marker.fa-2x{style:'color:green'}
+      .col-xl-11.col-md-10.col-xs-9
+       .itineraryDeparture
+        %strong Start at {{wizardSelectedItinerary.start_location | placeLabel}}
+       .itineraryDepartTime
+        %span.sub-info-text Depart at {{wizardSelectedItinerary.start_time | date:"h:mm a"}}
+        .real-time-update.pull-right{ng:{'show'=>'wizardSelectedItinerary.realStartTime && showRealtime'}}
+         %span
+          Est. {{wizardSelectedItinerary.realStartTime | date:"h:mm a"}}
+          %svg{"enable-background" => "new 0 0 8 8", :height => "8", :viewbox => "0 0 8 8", :width => "8", :xmlns => "http://www.w3.org/2000/svg"}
+           %g#signal{:fill => "#007fae"}
+            %path#first{:d => "m4.02 8c-.468 0-.848-.38-.848-.848 0-1.282-1.045-2.326-2.326-2.326-.468 0-.848-.38-.848-.848s.38-.848.848-.848c2.219 0 4.03 1.806 4.03 4.03-.004.465-.384.845-.851.845"}
+            %path#second{:d => "m7.152 7.539c-.467 0-.848-.38-.848-.848 0-2.757-2.243-4.996-4.996-4.996-.467 0-.848-.38-.848-.848s.381-.847.848-.847c3.692 0 6.692 3 6.692 6.695 0 .464-.38.844-.848.844"}
+     .row{ng:{'show'=>'wizardSelectedItinerary.origin_in_callnride'}}
+      .col-xl-1.col-md-2.col-xs-3
+       %i.origin.fa.fa-info-circle.fa-2x
+      .col-xl-11.col-md-10.col-xs-9
+       %strong.location-cnr Location in Call-N-Ride Zone
+       %strong.location-cnr {{selectedItinerary.origin_callnride}}
+    .itineraryDetail{'index' => '{{$index}}', ng: {click: 'zoomLeg()', repeat: 'leg in wizardSelectedItinerary.json_legs track by $index', class: '{"mode_bus": leg.mode == "BUS", "mode_walk": leg.mode == "WALK", "mode_tram":leg.mode == "TRAM" || leg.mode == "RAIL"}'}}
+     .car-info{ng: {show: 'leg.mode == "CAR"'}, style:'border-left-color:#00b3ff;'}
+      .row.leg--warning{ng: {if: 'leg.warning'}}
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon
+         %img.itineraryDetailLgIcon{src: 'images/modes/auto.png'}
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle{title: '{{leg.warning}}'}
+        %span
+         {{leg.warning}}
+      .row
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon{ng: {if: '!leg.warning'}}
+         %img.itineraryDetailLgIcon{src: 'images/modes/auto.png'}
+       .col-xl-11.col-md-10.col-xs-9
+        %strong.leg-header Drive car
+      .row
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7
+        %strong.otp-label.label-duration Duration:
+        {{leg.scheduledStartTime | date :"short"}} to {{leg.scheduledEndTime | date :"short"}}
+      .row
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7
+        Travel time: {{leg.duration | travelTime}}
+      .row
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7
+        %button.walking-directions.collapsed.btn{type: 'button', "data-toggle" => "collapse", "data-target" => "#driving-directions-{{$id}}-{{$index}}", "aria-expanded" => "false", "aria-controls" =>"driving-directions-{{$id}}-{{$index}}"}
+         Driving Directions
+      .animate-show.collapse{id:"driving-directions-{{$id}}-{{$index}}"}
+       .row{ng: {repeat: 'step in leg.steps'}}
+        .leg-info.col-xs-12{"print-section" => "", style: 'padding-left: 50px;'}
+         .col-xs-3
+          %i.fa.fa-lg{class: 'fa-arrow-{{step.arrow}}'}
+         .col-xs-9
+          .row
+           .leg-info.col-xs-12
+            {{step.description}}
+          .row.text-muted
+           .leg-info.col-xs-12
+            .walk-step
+             {{step.distance | distance}}
+     .bike-info{ng: {show: 'leg.mode == "BICYCLE"'}, style:'border-left-color:#00b3ff;'}
+      .row{ng: {if: 'leg.warning'}}
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon
+         %img.itineraryDetailLgIcon{src: 'images/modes/bicycle.png'}
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle{title: '{{leg.warning}}'}
+        %span
+         {{leg.warning}}
+      .row
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon
+         %img.itineraryDetailLgIcon{src: 'images/modes/bicycle.png', ng: {if: '!leg.warning'}}
+       .col-xl-11.col-md-10.col-xs-9
+        %strong.leg-header Ride bicycle
+      .row
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7
+        %strong.otp-label.label-duration Duration:
+        {{leg.scheduledStartTime | date :"short"}} to {{leg.scheduledEndTime | date :"short"}}
+      .row
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7
+        %span.sub-info-text About {{leg.distance | distance}}
+      .row
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7
+        %span.sub-info-text About {{leg.duration | travelTime}}
+      .row
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7
+        %button.walking-directions.collapsed.btn{type: 'button', "data-toggle" => "collapse", "data-target" => "#bicycling-directions-{{$id}}-{{$index}}", "aria-expanded" => "false", "aria-controls" =>"bicycling-directions-{{$id}}-{{$index}}"}
+         Bicycling Directions
+      .animate-show.collapse{id:"bicycling-directions-{{$id}}-{{$index}}"}
+       .row{ng: {repeat: 'step in leg.steps'}}
+        .leg-info.col-xs-12{"print-section" => "", style: 'padding-left: 50px;'}
+         .col-xs-3
+          %i.fa.fa-lg{class: 'fa-arrow-{{step.arrow}}'}
+         .col-xs-9
+          .row
+           .leg-info.col-xs-12
+            {{step.description}}
+          .row.text-muted
+           .leg-info.col-xs-12
+            .walk-step
+             {{step.distance | distance}}
+     .bus-info{ng: {show: 'leg.mode == "BUS"',  attr: {style:'border-left-color:#{{leg.routeColor}};'}}}
+      .row{ng: {if: 'leg.warning'}}
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon
+         %img.itineraryDetailLgIcon{src: 'images/modes/transit.png'}
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle{title: '{{leg.warning}}'}
+        %span
+         {{leg.warning}}
+      .row.leg--start
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon{ng: {if: '!leg.warning'}}
+         %img.itineraryDetailLgIcon{src: 'images/modes/transit.png'}
+       .col-xl-1.col-md-2.col-xs-3
+        %span.otp-leg-start-time {{leg.scheduledStartTime | date :"shortTime"}}
+       .col-xl-10.col-md-8.col-xs-6
+        %span Board the
+        %span.route-icon{style: 'margin-left: 2px; color: #{{leg.routeTextColor}};', ng: {attr: {style:'background-color:#{{leg.routeColor}}; color: #{{leg.routeTextColor}}'}, if: 'leg.route'}} {{leg.route}}
+        %span at {{leg.from.name}}
+        %span.otp-headsign towards {{leg.headsign}}
+        %span.otp-stopId {{leg.from.stopId | stopId}}
+      .row.leg--end
+       .col-xl-1.col-md-2.col-xs-3
+       .col-xl-1.col-md-2.col-xs-3
+        %span.otp-leg-end-time {{leg.scheduledEndTime | date :"shortTime"}}
+       .col-xl-10.col-md-8.col-xs-6
+        %span Get off at {{leg.to.name}}
+        %span.otp-stopId {{leg.to.stopId | stopId}}
+      .row{ng:{'show'=>'leg.realStartTime && showRealtime'}}
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7.real-time-update
+        %span
+         Est. {{leg.realStartTime | date:"shortTime" }} to {{leg.realEndTime | date:"shortTime" }}
+         %svg{"enable-background" => "new 0 0 8 8", :height => "8", :viewbox => "0 0 8 8", :width => "8", :xmlns => "http://www.w3.org/2000/svg"}
+          %g#signal{:fill => "#007fae"}
+           %path#first{:d => "m4.02 8c-.468 0-.848-.38-.848-.848 0-1.282-1.045-2.326-2.326-2.326-.468 0-.848-.38-.848-.848s.38-.848.848-.848c2.219 0 4.03 1.806 4.03 4.03-.004.465-.384.845-.851.845"}
+           %path#second{:d => "m7.152 7.539c-.467 0-.848-.38-.848-.848 0-2.757-2.243-4.996-4.996-4.996-.467 0-.848-.38-.848-.848s.381-.847.848-.847c3.692 0 6.692 3 6.692 6.695 0 .464-.38.844-.848.844"}
+      .otp-itinerary-sub-data
+       .row{ng: {if: 'leg.waitTimeDesc'}}
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         {{leg.waitTimeDesc}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         Travel time: {{leg.duration | travelTime}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         Stops: {{leg | stopCount}}
+       .row{ng: {if: 'leg.nextDepartureTime && leg.hasNext'}}
+        .col-xl-1.col-md-2.col-xs-3
+        .col-xl-11.col-md-10.col-xs-9
+         Next departure: {{leg.nextDepartureTime | date:"shortTime"}}
+      .row.itinerary-warning{ng: {if: '!leg.hasNext'}}
+       .col-xl-1.col-md-2.col-xs-3
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle
+        %span.warning
+         Alert - Next departure over 2 hours
+      .row{ng: {if: 'leg.specialService'}}
+       .col-xl-1.col-md-2.col-xs-3
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle
+        %span.warning
+         This is a special service bus
+      .intermediateStops{ng: {show: 'leg.intermediateStops && leg.intermediateStops.length > 0'}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         %button.walking-directions.collapsed.btn{type: 'button', "data-toggle" => "collapse", "data-target" => "#intermediate-stops-{{$id}}-{{$index}}", "aria-expanded" => "false", "aria-controls" =>"intermediate-stops-{{$id}}-{{$index}}"}
+          Intermediate stops
+       .animate-show.collapse{id:"intermediate-stops-{{$id}}-{{$index}}"}
+        .row{ng: {repeat: 'stop in leg.intermediateStops'}}
+         .leg-info.col-xs-12{"print-section" => "", style: 'padding-left: 50px;'}
+          .col-xs-2
+           %img.walk-arrow{style: 'margin: 5px', height: '15px', width: '15px', ng: {if: 'leg.mode == "BUS"', src: 'images/modes/transit.png'}}
+           %img.walk-arrow{style: 'margin: 5px', height: '15px', width: '15px', ng: {if: 'leg.mode == "TRAM" || leg.mode == "RAIL"', src: 'images/modes/streetcar.png'}}
+          .col-xs-10
+           .row
+            .leg-info.col-xs-12
+             {{stop.name}}
+           .row.text-muted
+            .leg-info.col-xs-12
+             .walk-step
+              MyStop: {{stop.stopId}}
+           .row
+            .col-xs-9
+             {{stop.scheduledEndTime | date :"shortTime"}}
+           .row{ng:{'show'=>'stop.realEndTime && showRealtime'}}
+            .col-xs-9.real-time-update
+             %span
+              Est. {{stop.realEndTime | date :"shortTime"}}
+              %svg{"enable-background" => "new 0 0 8 8", :height => "8", :viewbox => "0 0 8 8", :width => "8", :xmlns => "http://www.w3.org/2000/svg"}
+               %g#signal{:fill => "#007fae"}
+                %path#first{:d => "m4.02 8c-.468 0-.848-.38-.848-.848 0-1.282-1.045-2.326-2.326-2.326-.468 0-.848-.38-.848-.848s.38-.848.848-.848c2.219 0 4.03 1.806 4.03 4.03-.004.465-.384.845-.851.845"}
+                %path#second{:d => "m7.152 7.539c-.467 0-.848-.38-.848-.848 0-2.757-2.243-4.996-4.996-4.996-.467 0-.848-.38-.848-.848s.381-.847.848-.847c3.692 0 6.692 3 6.692 6.695 0 .464-.38.844-.848.844"}
+           .row{ng:{show:'(stop.scheduledDepartTime-stop.scheduledEndTime)/1000/60 >= 10', attr: {style:'font-weight: bold'}}}
+            .col-xs-9
+             %strong {{stop.scheduledDepartTime | date :"shortTime"}}
+     .bus-info{ng: {show: 'leg.mode == "TRAM" || leg.mode == "RAIL"',  attr: {style:'border-left-color:#{{leg.routeColor}};'}}}
+      .row.leg--warning{ng: {if: 'leg.warning'}}
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon
+         %img.itineraryDetailLgIcon{src: 'images/modes/streetcar.png'}
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle{title: '{{leg.warning}}'}
+        %span {{leg.warning}}
+      .row.leg--start
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon{ng: {if: '!leg.warning'}}
+         %img.itineraryDetailLgIcon{src: 'images/modes/streetcar.png'}
+       .col-xl-1.col-md-2.col-xs-3
+        %span.otp-leg-start-time {{leg.scheduledStartTime | date :"shortTime"}}
+       .col-xl-10.col-md-8.col-xs-6
+        %span Board the
+        %span.route-icon{style: 'margin-left: 2px; color: #{{leg.routeTextColor}};', ng: {attr: {style:'background-color:#{{leg.routeColor}}; color: #{{leg.routeTextColor}}'}, if: 'leg.route'}} {{leg.route}}
+        %span at {{leg.from.name}}
+        %span.otp-headsign towards {{leg.headsign}}
+        %span.otp-stopId {{leg.from.stopId | stopId}}
+      .row.leg--end
+       .col-xl-1.col-md-2.col-xs-3
+       .col-xl-1.col-md-2.col-xs-3
+        %span.otp-leg-end-time {{leg.scheduledEndTime | date :"shortTime"}}
+       .col-xl-10.col-md-8.col-xs-6
+        %span Get off at {{leg.to.name}}
+        %span.otp-stopId {{leg.to.stopId | stopId}}
+      .row{ng:{'show'=>'leg.realStartTime && showRealtime'}}
+       .col-xl-2.col-md-2.col-xs-3
+       .col-md-8.col-xs-7.real-time-update
+        %span
+         Est. {{leg.realStartTime | date:"shortTime" }}-{{leg.realEndTime | date:"shortTime" }}
+         %svg{"enable-background" => "new 0 0 8 8", :height => "8", :viewbox => "0 0 8 8", :width => "8", :xmlns => "http://www.w3.org/2000/svg"}
+          %g#signal{:fill => "#007fae"}
+           %path#first{:d => "m4.02 8c-.468 0-.848-.38-.848-.848 0-1.282-1.045-2.326-2.326-2.326-.468 0-.848-.38-.848-.848s.38-.848.848-.848c2.219 0 4.03 1.806 4.03 4.03-.004.465-.384.845-.851.845"}
+           %path#second{:d => "m7.152 7.539c-.467 0-.848-.38-.848-.848 0-2.757-2.243-4.996-4.996-4.996-.467 0-.848-.38-.848-.848s.381-.847.848-.847c3.692 0 6.692 3 6.692 6.695 0 .464-.38.844-.848.844"}
+      .otp-itinerary-sub-data
+       .row{ng: {if: 'leg.waitTimeDesc'}}
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         {{leg.waitTimeDesc}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         {{leg.scheduledStartTime | date :"shortTime"}} to {{leg.scheduledEndTime | date :"shortTime"}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         Travel time: {{leg.duration | travelTime}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         Stops: {{leg | stopCount}}
+       .row{ng: {if: 'leg.nextDepartureTime && leg.hasNext'}}
+        .col-xl-1.col-md-2.col-xs-3
+        .col-xl-11.col-md-10.col-xs-9
+         Next departure at {{leg.nextDepartureTime | date:"shortTime"}}
+      .row.itinerary-warning{ng: {if: '!leg.hasNext'}}
+       .col-xl-1.col-md-2.col-xs-3
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle
+        %span.warning
+         Alert - Next departure over 2 hours
+      .row{ng: {if: 'leg.specialService'}}
+       .col-xl-1.col-md-2.col-xs-3
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle
+        %span.warning
+         This is a special service train
+      .intermediateStops{ng: {show: 'leg.intermediateStops && leg.intermediateStops.length > 0'}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         %button.walking-directions.collapsed.btn{type: 'button', "data-toggle" => "collapse", "data-target" => "#train-directions-{{$id}}-{{$index}}", "aria-expanded" => "false", "aria-controls" =>"train-directions-{{$id}}-{{$index}}"}
+          Intermediate Stops
+       .animate-show.collapse{id:"train-directions-{{$id}}-{{$index}}"}
+        .row{ng: {repeat: 'stop in leg.intermediateStops'}}
+         .leg-info.col-xs-12{"print-section" => "", style: 'padding-left: 50px;'}
+          .col-xs-2
+           %img.walk-arrow{style: 'margin: 5px', height: '15px', width: '15px', ng: {if: 'leg.mode == "BUS"', src: 'images/modes/transit.png'}}
+           %img.walk-arrow{style: 'margin: 5px', height: '15px', width: '15px', ng: {if: 'leg.mode == "TRAM" || leg.mode == "RAIL"', src: 'images/modes/streetcar.png'}}
+          .col-xs-10
+           .row
+            .leg-info.col-xs-12
+             {{stop.name}}
+           .row.text-muted
+            .leg-info.col-xs-12
+             .walk-step
+              MyStop: {{stop.stopId}}
+           .row
+            .col-xs-9
+             {{stop.scheduledEndTime | date :"shortTime"}}
+           .row{ng:{'show'=>'stop.realEndTime && showRealtime'}}
+            .col-xs-9.real-time-update
+             %span
+              Est. {{stop.realEndTime | date :"shortTime"}}
+              %svg{"enable-background" => "new 0 0 8 8", :height => "8", :viewbox => "0 0 8 8", :width => "8", :xmlns => "http://www.w3.org/2000/svg"}
+               %g#signal{:fill => "#007fae"}
+                %path#first{:d => "m4.02 8c-.468 0-.848-.38-.848-.848 0-1.282-1.045-2.326-2.326-2.326-.468 0-.848-.38-.848-.848s.38-.848.848-.848c2.219 0 4.03 1.806 4.03 4.03-.004.465-.384.845-.851.845"}
+                %path#second{:d => "m7.152 7.539c-.467 0-.848-.38-.848-.848 0-2.757-2.243-4.996-4.996-4.996-.467 0-.848-.38-.848-.848s.381-.847.848-.847c3.692 0 6.692 3 6.692 6.695 0 .464-.38.844-.848.844"}
+           .row{ng:{show:'(stop.scheduledDepartTime-stop.scheduledEndTime)/1000/60 >= 10', attr: {style:'font-weight: bold'}}}
+            .col-xs-9
+             %strong {{stop.scheduledDepartTime | date :"shortTime"}}
+     .walk-info{ng: {show: 'leg.mode == "WALK"'}, style:'border-left-color:#00B3FF;'}
+      .row.leg--warning{ng: {if: 'leg.warning'}}
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon
+         %img.itineraryDetailLgIcon{src: 'images/modes/walk.png'}
+       .col-xl-11.col-md-10.col-xs-9
+        %i.fa.fa-exclamation-triangle{title: '{{leg.warning}}'}
+        %span
+         {{leg.warning}}
+      .row
+       .col-xl-1.col-md-2.col-xs-3
+        .itinerary-icon{ng: {if: '!leg.warning'}}
+         %img.itineraryDetailLgIcon{src: 'images/modes/walk.png'}
+       .col-xl-11.col-md-10.col-xs-9
+        %button.walking-directions.collapsed.btn.itinerary-icon{type: 'button', "data-toggle" => "collapse", "data-target" => "#walking-directions-{{$id}}-{{$index}}", "aria-expanded" => "false", "aria-controls" =>"walking-directions-{{$id}}-{{$index}}"}
+         Start walking to {{leg.to.name}}
+         %span.otp-stopId {{leg.to.stopId | stopId}}
+      .animate-show.collapse{id:"walking-directions-{{$id}}-{{$index}}"}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         %strong.otp-label.label-duration Duration:
+         {{leg.scheduledStartTime | date :"short"}} to {{leg.scheduledEndTime | date :"short"}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         %span.sub-info-text About {{leg.distance | distance}}
+       .row
+        .col-xl-2.col-md-2.col-xs-3
+        .col-md-8.col-xs-7
+         %span.sub-info-text About {{leg.duration | travelTime}} walk
+       .row{ng: {repeat: 'step in leg.steps'}}
+        .leg-info.col-xs-12{"print-section" => "", style: 'padding-left: 50px;'}
+         .col-xs-2
+          %i.fa.fa-lg{class: 'fa-arrow-{{step.arrow}}'}
+         .col-xs-10
+          .row
+           .leg-info.col-xs-12
+            {{step.description}}
+          .row.text-muted
+           .leg-info.col-xs-12
+            .walk-step
+             {{step.distance | distance}}
+    .itineraryDetail{ng: {click: 'zoomLeg()'}}
+     .row
+      .col-xl-1.col-md-2.col-xs-3
+       %i.destination.fa.fa-map-marker.fa-2x{style:'color:red'}
+      .col-xl-11.col-md-10.col-xs-9
+       .itineraryDest
+        %strong End at {{wizardSelectedItinerary.end_location | placeLabel}}
+       .itineraryArrival
+        %span.sub-info-text Arrive at {{wizardSelectedItinerary.end_time | date:"h:mm a"}}
+     .row{ng:{'show'=>'wizardSelectedItinerary.destination_in_callnride'}}
+      .col-xl-1.col-md-2.col-xs-3
+       %i.origin.fa.fa-info-circle.fa-2x
+      .col-xl-11.col-md-10.col-xs-9
+       %strong.location-cnr Location in Call-N-Ride Zone
+       %strong.location-cnr {{selectedItinerary.destination_callnride}}
+  .col-xs-4.fullHeight
+   .row
+    %section.wizardMap
+     #wizardMap
